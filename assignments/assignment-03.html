@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 03: Semantic Layout &amp; Details | Web Development Learning Hub</title>
+    <meta name="description" content="Assignment demonstrating HTML5 semantic elements (header, nav, main, section, article, details, footer).">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Top Site Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <header>
+                <h1>Learn Coding</h1>
+            </header>
+            <hr style="margin: 1rem 0;">
+
+            <nav>
+                <ul style="display: flex; gap: 1rem; list-style: none; padding: 0;">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../login.html">Login</a></li>
+                    <li><a href="../assignments.html">Courses</a></li>
+                    <li><a href="../about.html">About us</a></li>
+                </ul>
+            </nav>
+            <hr style="margin: 1rem 0;">
+
+            <section>
+                <h2>Web Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam numquam, optio ipsum voluptatibus ab
+                    assumenda quod ducimus reiciendis facere voluptas sed, reprehenderit perspiciatis doloremque ea quo odit animi,
+                    totam natus?
+                </p>
+                <hr style="margin: 1rem 0;">
+
+                <article>
+                    <h3>HTML5 Course</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam numquam, optio ipsum voluptatibus ab
+                        assumenda quod ducimus reiciendis facere voluptas sed, reprehenderit perspiciatis doloremque ea quo odit
+                        animi, totam natus?
+                    </p>
+                    <details style="margin-top: 0.5rem; padding: 0.5rem; background-color: var(--light-bg); border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600;">Read more.....</summary>
+                        <p style="margin-top: 0.5rem;">This course covers semantic markup, accessibility (a11y), responsive images, audio, video elements, and modern form validation techniques.</p>
+                    </details>
+                </article>
+
+                <hr style="margin: 1rem 0;">
+
+                <article>
+                    <h3>CSS3 Course</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam numquam, optio ipsum voluptatibus ab
+                        assumenda quod ducimus reiciendis facere voluptas sed, reprehenderit perspiciatis doloremque ea quo odit
+                        animi, totam natus?
+                    </p>
+                    <details style="margin-top: 0.5rem; padding: 0.5rem; background-color: var(--light-bg); border-radius: 4px;">
+                        <summary style="cursor: pointer; font-weight: 600;">Read more.....</summary>
+                        <p style="margin-top: 0.5rem;">Master CSS layout algorithms including Flexbox and CSS Grid, responsive design with media queries, custom properties, and transitions.</p>
+                    </details>
+                </article>
+            </section>
+            <hr style="margin: 1.5rem 0;">
+
+            <footer style="text-align: center; border: none; padding: 0.5rem 0;">
+                <p>&copy; 2026 Learn Coding | all rights reserved</p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

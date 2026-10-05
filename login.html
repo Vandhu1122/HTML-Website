@@ -4,23 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login | Web Development Learning Hub</title>
+    <meta name="description" content="Sign in to your Web Development Learning Hub account.">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <form action="">
-        <h1> Welcome to Login </h1>
-        <label> Username: </label> <br>
-        <input type="text" placeholder="Enter Username" required>
-        <br> <br>
-        <label> Password: </label> <br>
-        <input type="password" placeholder="Enter Password" required>
-        </label>
-        <br> <br>
-        <input type="submit" value="Login">
-        <a href="login.html"> Forget password </a>
-    </form>
-    <p> New account <a href="D:\HTML\signup.html">Signup here</a></p>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="about.html">About</a>
+                <a href="media.html">Media</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="active">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card form-container">
+            <h1>Account Login</h1>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Enter your credentials to access your account.</p>
+
+            <form action="#" method="get">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign In</button>
+
+                <div class="form-footer">
+                    <p><a href="#">Forgot your password?</a></p>
+                    <p style="margin-top: 0.5rem;">Don't have an account? <a href="signup.html">Create an account</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
