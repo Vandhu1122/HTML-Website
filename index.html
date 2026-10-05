@@ -4,58 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home | Web Development Learning Hub</title>
+    <meta name="description" content="A beginner-friendly HTML website showcasing web development concepts, multimedia, and coursework assignments.">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!-- Header section-->
+    <!-- Header Section -->
     <header>
-        <div align="50%">
-            <img src="D:\HTML\Project.html\logo1.jpg" alt="" height="50" width="50">
-            <span>Computer AI</span>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="about.html">About</a>
+                <a href="media.html">Media</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </nav>
         </div>
-        <nav align="right">
-            <a href=""> Home</a>|
-            <a href="about.html">About</a>|
-            <a href="contact.html">Contact</a>|
-            <a href="media.html">Media</a>|
-            <a href="login.html">Login</a>
+    </header>
 
-        </nav>
-    </header> <br>
-    <!-- Hero Section-->
-    <section>
-        <table width="100%" cellpadding="10">
-            <tr>
-                <!-- Left Part-->
-                <td width="50%" align="top">
-                    <h1>Welcome to Web Page</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quia aspernatur veniam nobis eos
-                        odit
-                        nulla
-                        earum perspiciatis nisi et perferendis consectetur enim repudiandae, optio, itaque molestias
-                        vero qui
-                        inventore! </p>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero card">
+            <div class="hero-content">
+                <h1>Master HTML5 & Web Fundamentals</h1>
+                <p>Welcome to the Web Development Learning Hub. This project documents foundational web development concepts, including semantic page layouts, accessible forms, audio and video integration, and structured HTML tables.</p>
+                <p>Explore our hands-on coursework assignments to see working code examples for modern web standards.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="assignments.html" class="btn-primary" style="display: inline-block; width: auto; text-decoration: none;">Explore Assignments</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <figure>
+                    <img src="assets/images/img.webp" alt="HTML code and web layout demonstration" width="420" height="420">
+                    <figcaption>Figure 3.4: Modern HTML5 Semantic Architecture</figcaption>
+                </figure>
+            </div>
+        </section>
 
-                    <h3>Our Vision</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quia aspernatur veniam nobis eos
-                        odit nulla</p>
-                    <p> earum perspiciatis nisi et perferendis consectetur enim repudiandae, optio, itaque molestias
-                        vero qui
-                        inventore! </p>
-                </td>
-                <!-- Right Part-->
-                <td align="center" align="top">
-                    <img src="D:\HTML\Project.html\img.webp" alt="" width="450" height="450">
-                    <h4> Figer:3.4 Html</h4>
-                </td>
-            </tr>
-        </table>
-    </section> <br> <br>
-    <hr>
+        <!-- Highlights Section -->
+        <section class="card">
+            <h2>Core Learning Areas</h2>
+            <div class="grid">
+                <div class="grid-card">
+                    <h3>Semantic Layouts</h3>
+                    <p>Learn to structure documents cleanly using header, nav, main, section, article, and footer tags.</p>
+                    <a href="assignments.html#semantics">View Examples &rarr;</a>
+                </div>
+                <div class="grid-card">
+                    <h3>Multimedia Integration</h3>
+                    <p>Integrate responsive video, audio players, and embedded video players with fallback support.</p>
+                    <a href="media.html">Explore Media &rarr;</a>
+                </div>
+                <div class="grid-card">
+                    <h3>Accessible Forms</h3>
+                    <p>Build forms with properly associated labels, input validation, and clear navigation.</p>
+                    <a href="signup.html">Test Form &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer>
-        <p align="center"> @2026 Copy Right New Project</p>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
     </footer>
 </body>
 

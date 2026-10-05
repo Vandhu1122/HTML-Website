@@ -4,30 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
+    <title>About | Web Development Learning Hub</title>
+    <meta name="description" content="Learn about the purpose and history of the Web Development Learning Hub project.">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
-        <div align="50%">
-            <img src="D:\HTML\Project.html\logo1.jpg" alt="" height="50" width="50">
-            <span>Computer AI</span>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="about.html" class="active">About</a>
+                <a href="media.html">Media</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </nav>
         </div>
-        <nav align="right">
-            <a href=""> Home</a>|
-            <a href="about.html">About</a>|
-            <a href="contact.html">Contact</a>|
-            <a href="media.html">Media</a>|
-            <a href="login.html">Login</a>
+    </header>
 
-        </nav>
-    </header> <br>
-    <h1>About</h1>
+    <!-- Main Content -->
+    <main>
+        <section class="card">
+            <h1>About This Project</h1>
+            <p style="margin-top: 1rem;">The <strong>Web Development Learning Hub</strong> is an educational open-source portfolio created to showcase fundamental web building blocks. It serves as both a reference guide and an interactive demonstration of HTML5 and CSS3 capabilities.</p>
+
+            <h2 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Project Goals</h2>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Provide clean, understandable examples of core HTML tags and attributes.</li>
+                <li>Demonstrate progressive enhancement from pure HTML markup to styled, responsive interfaces.</li>
+                <li>Establish accessible and standards-compliant coding habits for beginner developers.</li>
+            </ul>
+
+            <h2>Technology & Concepts</h2>
+            <div class="grid">
+                <div class="grid-card">
+                    <h3>Document Structure</h3>
+                    <p>Standards-compliant HTML5 documents with valid DOCTYPE, meta viewport, and semantic tags.</p>
+                </div>
+                <div class="grid-card">
+                    <h3>Accessible Controls</h3>
+                    <p>Labels, ARIA considerations, keyboard-navigable elements, and responsive layouts.</p>
+                </div>
+                <div class="grid-card">
+                    <h3>Modular CSS</h3>
+                    <p>Custom CSS design system built on CSS variables, flexbox, and responsive media queries.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
 </body>
-<hr>
-<!-- Footer -->
-<footer>
-    <p align="center"> @2026 Copy Right New Project</p>
-</footer>
 
 </html>

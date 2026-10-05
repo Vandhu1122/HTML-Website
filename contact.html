@@ -4,39 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact | Web Development Learning Hub</title>
+    <meta name="description" content="Get in touch with the Web Development Learning Hub project team.">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
-        <div align="50%">
-            <img src="D:\HTML\Project.html\logo1.jpg" alt="" height="50" width="50">
-            <span>Computer AI</span>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="about.html">About</a>
+                <a href="media.html">Media</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="login.html">Login</a>
+            </nav>
         </div>
-        <nav align="right">
-            <a href=""> Home</a>|
-            <a href="about.html">About</a>|
-            <a href="contact.html">Contact</a>|
-            <a href="media.html">Media</a>|
-            <a href="login.html">Login</a>
+    </header>
 
-        </nav>
-    </header> <br>
+    <!-- Main Content -->
+    <main>
+        <div class="card form-container">
+            <h1>Contact Us</h1>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Have questions about the coursework or project? Fill out the form below or use our contact details.</p>
 
-    <h2> 1. Email Link</h2>
-    <a href="mailto:vandhu7621@gmail.com" target="_blank"> send mail </a>
-    <hr>
+            <form action="#" method="get">
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" name="name" class="form-control" placeholder="Enter your full name" required>
+                </div>
 
-    <h2> 2. Call me Link</h2>
-    <a href="tel:7037144983" target="_blank"> call now </a>
-    <hr>
-    <h2> 3. Call me Link</h2>
-    <a href="D:\HTML\Assignment 2.html\assignment 3.html" target="_blank"> visit assignment 9 </a>
-    <hr>
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" name="email" class="form-control" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-subject">Subject</label>
+                    <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="Subject of your message" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <h2>Direct Contact Options</h2>
+            <p style="margin-top: 0.5rem;"><strong>Email:</strong> <a href="mailto:contact@example.com" style="color: var(--primary-color);">contact@example.com</a></p>
+            <p style="margin-top: 0.5rem;"><strong>Inquiry Line:</strong> <a href="tel:+15550192834" style="color: var(--primary-color);">+1 (555) 019-2834</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
 </body>
-<!-- Footer -->
-<footer>
-    <p align="center"> @2026 Copy Right New Project</p>
-</footer>
 
 </html>

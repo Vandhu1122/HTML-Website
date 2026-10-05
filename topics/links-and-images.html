@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links &amp; Images | Web Development Learning Hub</title>
+    <meta name="description" content="Reference guide for inserting hyperlinks and embedding images in HTML.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Section 1: External Links -->
+        <section class="card">
+            <h1>Hyperlinks &amp; External References</h1>
+            <p style="margin-bottom: 1rem;">Hyperlinks allow users to navigate between pages and external websites.</p>
+            <div style="margin-bottom: 1rem;">
+                <a href="https://www.nsvec.com/" target="_blank" rel="noopener noreferrer">Visit NSVEC</a>
+            </div>
+            <div>
+                <a href="https://www.w3schools.com/html/default.asp" target="_blank" rel="noopener noreferrer">Visit W3Schools HTML Tutorial</a>
+            </div>
+            <p style="color: rgb(6, 85, 6); margin-top: 1rem;">All unvisited links are displayed by default in blue color.</p>
+        </section>
+
+        <!-- Section 2: Embedded Images -->
+        <section class="card">
+            <h2>Embedded Images</h2>
+            <p style="margin-bottom: 1rem;">Images embedded using standard relative asset paths:</p>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
+                <div>
+                    <h3>Sample Image</h3>
+                    <img src="../assets/images/vandana-image.jpg" alt="Sample photograph" width="300" height="400" style="max-width: 100%; height: auto; border-radius: 4px;">
+                </div>
+                <div>
+                    <h3>Site Logo</h3>
+                    <img src="../assets/images/logo.jpg" alt="Course Logo" width="104" height="142" style="max-width: 100%; height: auto; border-radius: 4px;">
+                </div>
+                <div>
+                    <h3>Overview Graphic</h3>
+                    <img src="../assets/images/img.webp" alt="HTML layout graphic" width="300" height="400" style="max-width: 100%; height: auto; border-radius: 4px;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
