@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 05: Unordered Lists | Web Development Learning Hub</title>
+    <meta name="description" content="Assignment demonstrating HTML unordered lists, bullet styles, and nested list structures.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 5: Unordered Lists</span></nav>
+            <!-- use unorder list -->
+            <h1>Assignment 5: Unordered Lists</h1>
+
+            <h2 style="margin-top: 1.5rem;"> 1. Default Unordered List </h2>
+            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                <li> Home </li>
+                <li> About us </li>
+                <li> Login </li>
+            </ul>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 2. Circle Unordered List </h2>
+            <ul style="list-style-type: circle; margin-left: 2rem; margin-top: 0.5rem;">
+                <li> Home </li>
+                <li> About us </li>
+                <li> Login </li>
+            </ul>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 3. Square Unordered List </h2>
+            <ul style="list-style-type: square; margin-left: 2rem; margin-top: 0.5rem;">
+                <li> Home </li>
+                <li> About us </li>
+                <li> Login </li>
+            </ul>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 4. No Bullet Unordered List </h2>
+            <ul style="list-style-type: none; margin-left: 0.5rem; margin-top: 0.5rem;">
+                <li> Home </li>
+                <li> About us </li>
+                <li> Login </li>
+            </ul>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 5. Nested Unordered List </h2>
+            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                <li> Front-end
+                    <ul style="list-style: square; margin-left: 1.5rem; margin-top: 0.25rem;">
+                        <li> HTML </li>
+                        <li> CSS </li>
+                        <li> JavaScript </li>
+                    </ul>
+                </li>
+                <li style="margin-top: 0.75rem;"> Back-end
+                    <ul style="list-style: circle; margin-left: 1.5rem; margin-top: 0.25rem;">
+                        <li> Python </li>
+                        <li> Node.js </li>
+                        <li> Java </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

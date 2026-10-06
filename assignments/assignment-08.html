@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08: Background Images | Web Development Learning Hub</title>
+    <meta name="description" content="Assignment demonstrating CSS background images replacing deprecated HTML background attributes.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        body {
+            background-image: url('../assets/images/vandana-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .content-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- TEXT AND SIMPLE IMAGE INSERT -->
+        <section class="card content-card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 8: Background Images</span></nav>
+            <h1>Assignment 8: Background Image</h1>
+            <p style="margin-top: 1rem;">This assignment demonstrates how to replace the deprecated HTML4 <code>&lt;body background="..."&gt;</code> attribute with modern CSS <code>background-image: url('../assets/images/vandana-image.jpg')</code>.</p>
+
+            <div style="margin-top: 1.5rem; height: 180px; background-image: url('../assets/images/vandana-image.jpg'); background-size: cover; background-position: center; border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.25rem; font-weight: bold; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);">
+                Box with CSS Background Image
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-muted);">This is a simple image insert in HTML using modern CSS presentation techniques.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: rgba(255, 255, 255, 0.95);">
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

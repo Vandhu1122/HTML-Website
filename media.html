@@ -4,62 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meida</title>
+    <title>Multimedia Showcase | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of HTML5 audio, video, poster images, and responsive embedded video players.">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
     <header>
-        <div align="50%">
-            <img src="D:\HTML\Project.html\logo1.jpg" alt="" height="50" width="50">
-            <span>Computer AI</span>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="assignments.html">Assignments</a>
+                <a href="about.html">About</a>
+                <a href="media.html" class="active">Media</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
-        <nav align="right">
-            <a href=""> Home</a>|
-            <a href="about.html">About</a>|
-            <a href="contact.html">Contact</a>|
-            <a href="media.html">Media</a>|
-            <a href="login.html">Login</a>
+    </header>
 
-        </nav>
-    </header> <br>
-    <h1> HTML Multimedia - Audio </h1>
-    <h2> 1. Simple Audio</h2>
-    <audio src="C:\Users\LENOVO\Music\Standard recording 1.mp3.mpeg" controls> </audio>
-    <br> <br>
-    <h2> 2. Autoplay Audio</h2>
-    <audio src="C:\Users\LENOVO\Music\Standard recording 1.mp3.mpeg" autoplay muted controls> </audio>
-    <br> <br>
-    <h2> 3. Loop Audio</h2>
-    <audio src="C:\Users\LENOVO\Music\Standard recording 1.mp3.mpeg" loop controls> </audio>
-    <hr>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Audio Section -->
+        <section class="card">
+            <h1>HTML5 Multimedia — Audio</h1>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">The <code>&lt;audio&gt;</code> element enables native browser playback of sound files without plugins.</p>
 
-    <h1> Vido Multimedia - Video </h1>
-    <h2> 1. Simple Video </h2>
-    <video src="C:\Users\LENOVO\Music\video.mp4" height="300" controls> </video>
-    <br> <br>
-    <h2> 2. Autoplay Video </h2>
-    <video src="C:\Users\LENOVO\Music\video.mp4" height="300" autoplay muted controls> </video>
-    <br> <br>
-    <h2> 3. loop Video </h2>
-    <video src="C:\Users\LENOVO\Music\video.mp4" height="300" loop controls> </video>
-    <br> <br>
+            <h3>1. Standard Audio Player</h3>
+            <p>Standard audio player with user controls:</p>
+            <audio controls style="margin: 0.5rem 0 1.5rem 0; width: 100%;">
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
-    <h2> 4. Video with Poater </h2>
-    <video src="C:\Users\LENOVO\Music\video.mp4" poster="D:\HTML\image\vandana image.jpg" height="300" controls>
-    </video>
-    <br> <br>
+            <h3>2. Loop Audio</h3>
+            <p>Audio player with repeat/loop playback enabled:</p>
+            <audio controls loop style="margin: 0.5rem 0 1rem 0; width: 100%;">
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
 
-    <h2> 4. Embeded Video </h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ot4aTmq7ZL0?si=d77QTjWoz1RtPKc2"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br> <br>
+        <!-- Video Section -->
+        <section class="card">
+            <h1>HTML5 Multimedia — Video</h1>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">The <code>&lt;video&gt;</code> element supports attributes like <code>controls</code>, <code>poster</code>, and <code>loop</code>.</p>
+
+            <h3>1. Standard Video with Controls</h3>
+            <video controls width="100%" height="auto" style="margin: 0.5rem 0 1.5rem 0;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>2. Video with Custom Poster</h3>
+            <p>Video with a custom preview poster before playback starts:</p>
+            <video controls poster="assets/images/vandana-image.jpg" width="100%" height="auto" style="margin: 0.5rem 0 1.5rem 0;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>3. Responsive Embedded Video</h3>
+            <p>Embedded video iframe wrapped in a fluid 16:9 aspect-ratio container:</p>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Ot4aTmq7ZL0?si=d77QTjWoz1RtPKc2"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
-<hr>
-<!-- Footer -->
-<footer>
-    <p align="center"> @2026 Copy Right New Project</p>
-</footer>
 
 </html>

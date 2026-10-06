@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 16: Semantic Metadata &amp; Structured Data | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of machine-readable time elements, address contact cards, and search metadata.">
+    <!-- Open Graph Metadata Tags for Social Sharing -->
+    <meta property="og:title" content="Assignment 16: Semantic Metadata &amp; Structured Data | Web Development Learning Hub">
+    <meta property="og:description" content="Demonstration of machine-readable time elements, address contact cards, and search metadata.">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 16: Semantic Metadata &amp; Structured Data</span></nav>
+            <h1 style="margin-top: 1rem;">Assignment 16: Semantic Metadata &amp; Machine-Readable Data</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Structure content for search engines, calendar tools, and automated accessibility parsers.</p>
+
+            <!-- Time Elements -->
+            <section style="margin-bottom: 2rem;">
+                <h2>1. Machine-Readable Dates &amp; Times (&lt;time&gt;)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">The <code>&lt;time&gt;</code> element translates human dates into standardized ISO-8601 timestamps:</p>
+
+                <ul style="margin-left: 1.5rem; margin-top: 0.75rem; line-height: 1.8;">
+                    <li>Project Launch Date: <time datetime="2026-10-05">October 5, 2026</time></li>
+                    <li>Weekly Lab Session: <time datetime="2026-10-09T14:30:00+05:30">Every Friday at 2:30 PM IST</time></li>
+                    <li>Assignment Submission Deadline: <time datetime="2026-10-15">October 15, 2026</time></li>
+                </ul>
+            </section>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Address Landmark -->
+            <section style="margin-bottom: 2rem;">
+                <h2>2. Author &amp; Contact Landmark (&lt;address&gt;)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">The <code>&lt;address&gt;</code> element provides contact information for the author of a document or article:</p>
+
+                <address style="font-style: normal; border-left: 3px solid var(--primary-color); padding-left: 1rem; margin-top: 1rem; line-height: 1.8;">
+                    <p><strong>Coursework Author:</strong> <a href="https://github.com/Vandhu1122" style="color: var(--primary-color);">Vandana</a></p>
+                    <p>Repository: <a href="https://github.com/Vandhu1122/HTML-Website" style="color: var(--primary-color);">HTML-Website on GitHub</a></p>
+                    <p>Inquiries: <a href="mailto:contact@example.com" style="color: var(--primary-color);">contact@example.com</a></p>
+                </address>
+            </section>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Data Element -->
+            <section style="margin-bottom: 2rem;">
+                <h2>3. Machine-Readable Value Mapping (&lt;data&gt;)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">The <code>&lt;data&gt;</code> element pairs human-facing text with a machine-readable value:</p>
+
+                <ul style="margin-left: 1.5rem; margin-top: 0.75rem; line-height: 1.8;">
+                    <li>Course Catalog ID: <data value="WEB-HTML-101">Introductory Web Development</data></li>
+                    <li>Course Module Level: <data value="MOD-LVL-2">Intermediate Markup Architecture</data></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

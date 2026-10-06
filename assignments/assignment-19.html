@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 19: CSS Grid Layout Systems | Web Development Learning Hub</title>
+    <meta name="description" content="Explore CSS Grid layout systems, fraction units, auto-fit minmax responsive grids, and named grid-template-areas.">
+    <!-- Open Graph Metadata Tags for Social Sharing -->
+    <meta property="og:title" content="Assignment 19: CSS Grid Layout Systems | Web Development Learning Hub">
+    <meta property="og:description" content="Explore CSS Grid layout systems, fraction units, auto-fit minmax responsive grids, and named grid-template-areas.">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .grid-demo-wrapper {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .grid-button-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .grid-ctrl-btn {
+            background-color: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .grid-ctrl-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .grid-ctrl-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .basic-grid-stage {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .grid-cell-item {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.2));
+            border: 2px solid var(--primary-color);
+            color: var(--text-primary);
+            padding: 1.5rem 1rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Auto-fit Section */
+        .responsive-fluid-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .fluid-card-item {
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fluid-card-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .fluid-card-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Named Grid Areas Section */
+        .named-areas-container {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            gap: 0.75rem;
+            min-height: 320px;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+
+        .area-header {
+            grid-area: header;
+            background: #2563eb;
+            color: #ffffff;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .area-sidebar {
+            grid-area: sidebar;
+            background: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 6px;
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .area-sidebar {
+            background: #1e293b;
+        }
+
+        .area-main {
+            grid-area: main;
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 6px;
+            color: var(--text-primary);
+        }
+
+        .area-footer {
+            grid-area: footer;
+            background: #334155;
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .code-display {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav aria-label="Main Navigation">
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <a href="../index.html">Home</a> &rsaquo;
+                <a href="../assignments.html">Assignments</a> &rsaquo;
+                <span>Assignment 19: CSS Grid Layout Systems</span>
+            </nav>
+            <h1 style="margin-top: 1rem;">Assignment 19: CSS Grid Layout Systems</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                Explore two-dimensional layout architecture using CSS Grid. Learn track definitions with fraction units (<code>fr</code>), fluid auto-responsive grids with <code>auto-fit</code> and <code>minmax()</code>, and named layout areas with <code>grid-template-areas</code>.
+            </p>
+
+            <!-- Section 1: Basic Grid -->
+            <section style="margin-bottom: 3rem;">
+                <h2>1. Basic Grid &amp; Fractional Tracks (<code>repeat(3, 1fr)</code>)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    The <code>fr</code> unit represents a fraction of the available free space within the grid container. Using <code>repeat(count, track)</code> allows compact track definitions.
+                </p>
+
+                <div class="grid-demo-wrapper">
+                    <div class="grid-button-toolbar">
+                        <button type="button" class="grid-ctrl-btn active" data-grid="repeat(3, 1fr)">repeat(3, 1fr)</button>
+                        <button type="button" class="grid-ctrl-btn" data-grid="repeat(4, 1fr)">repeat(4, 1fr)</button>
+                        <button type="button" class="grid-ctrl-btn" data-grid="repeat(2, 1fr)">repeat(2, 1fr)</button>
+                        <button type="button" class="grid-ctrl-btn" data-grid="1fr 2fr 1fr">1fr 2fr 1fr (Uneven)</button>
+                        <button type="button" class="grid-ctrl-btn" data-grid="200px 1fr 1fr">200px 1fr 1fr</button>
+                    </div>
+
+                    <div id="basic-grid-demo" class="basic-grid-stage">
+                        <div class="grid-cell-item">Track 1</div>
+                        <div class="grid-cell-item">Track 2</div>
+                        <div class="grid-cell-item">Track 3</div>
+                        <div class="grid-cell-item">Track 4</div>
+                        <div class="grid-cell-item">Track 5</div>
+                        <div class="grid-cell-item">Track 6</div>
+                    </div>
+
+                    <pre class="code-display"><code id="basic-grid-code">.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}</code></pre>
+                </div>
+            </section>
+
+            <hr style="margin: 2.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Section 2: Fluid Responsive Grid -->
+            <section style="margin-bottom: 3rem;">
+                <h2>2. Fluid Responsive Grid without Media Queries</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    By combining <code>repeat(auto-fit, minmax(200px, 1fr))</code> with <code>gap</code>, the grid automatically calculates the optimal column count based on available container width, wrapping cards automatically without any <code>@media</code> breakpoints.
+                </p>
+
+                <div class="grid-demo-wrapper">
+                    <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <label for="minmax-slider" style="font-size: 0.875rem; font-weight: 600;">Minimum Column Width: <span id="minmax-val">200px</span></label>
+                        <input type="range" id="minmax-slider" min="140" max="320" value="200" style="flex: 1; max-width: 250px; accent-color: var(--primary-color);">
+                    </div>
+
+                    <div id="fluid-grid-demo" class="responsive-fluid-grid">
+                        <div class="fluid-card-item">
+                            <h4>HTML5 Semantics</h4>
+                            <p>Structured document landmarks, accessibility, and clean markup hierarchy.</p>
+                        </div>
+                        <div class="fluid-card-item">
+                            <h4>CSS Box Model</h4>
+                            <p>Margin, border, padding, and content dimensions with border-box resets.</p>
+                        </div>
+                        <div class="fluid-card-item">
+                            <h4>Flexbox Alignment</h4>
+                            <p>One-dimensional dynamic layout distribution along main and cross axes.</p>
+                        </div>
+                        <div class="fluid-card-item">
+                            <h4>CSS Grid Layout</h4>
+                            <p>Two-dimensional layout systems with fractional units and named areas.</p>
+                        </div>
+                        <div class="fluid-card-item">
+                            <h4>Keyframe Animations</h4>
+                            <p>State transitions, timing functions, and smooth hardware-accelerated transforms.</p>
+                        </div>
+                        <div class="fluid-card-item">
+                            <h4>Accessible Forms</h4>
+                            <p>Semantic form controls, validation states, and screen reader announcements.</p>
+                        </div>
+                    </div>
+
+                    <pre class="code-display"><code id="fluid-grid-code">.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}</code></pre>
+                </div>
+            </section>
+
+            <hr style="margin: 2.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Section 3: Named Grid Template Areas -->
+            <section style="margin-bottom: 2rem;">
+                <h2>3. Named Grid Template Areas</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    The <code>grid-template-areas</code> property allows developers to visually diagram layout regions using named strings. Elements are subsequently mapped into regions via <code>grid-area: name</code>.
+                </p>
+
+                <div class="grid-demo-wrapper">
+                    <div class="grid-button-toolbar">
+                        <button type="button" class="grid-ctrl-btn active" id="layout-desktop-btn">Desktop Layout (Sidebar + Main)</button>
+                        <button type="button" class="grid-ctrl-btn" id="layout-stacked-btn">Mobile Stacked Layout</button>
+                        <button type="button" class="grid-ctrl-btn" id="layout-fullwidth-btn">Full-Width Hero Layout</button>
+                    </div>
+
+                    <div id="named-grid-stage" class="named-areas-container">
+                        <div class="area-header">
+                            <span>Site Header (area: header)</span>
+                            <span style="font-size: 0.8rem; opacity: 0.85;">Navigation Bar</span>
+                        </div>
+                        <div class="area-sidebar">
+                            <h4 style="margin-bottom: 0.5rem;">Sidebar Menu</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">area: sidebar</p>
+                            <ul style="margin-left: 1.25rem; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.6;">
+                                <li>Dashboard</li>
+                                <li>Assignments</li>
+                                <li>Settings</li>
+                            </ul>
+                        </div>
+                        <div class="area-main">
+                            <h3 style="margin-bottom: 0.5rem;">Primary Content Body</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">area: main</p>
+                            <p style="font-size: 0.9rem; line-height: 1.6;">
+                                This central region houses the principal coursework content. Using named template areas, this section automatically realigns when swapping layout templates.
+                            </p>
+                        </div>
+                        <div class="area-footer">
+                            Page Footer (area: footer) &bull; Web Development Learning Hub
+                        </div>
+                    </div>
+
+                    <pre class="code-display"><code id="named-areas-code">.page-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 0.75rem;
+}
+
+.site-header { grid-area: header; }
+.site-sidebar { grid-area: sidebar; }
+.main-content { grid-area: main; }
+.site-footer  { grid-area: footer; }</code></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Grid Controls Script -->
+    <script>
+        (function() {
+            // Section 1: Basic Grid
+            const basicDemo = document.getElementById('basic-grid-demo');
+            const basicCode = document.getElementById('basic-grid-code');
+            const gridButtons = document.querySelectorAll('.grid-button-toolbar .grid-ctrl-btn[data-grid]');
+
+            gridButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    gridButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const val = btn.getAttribute('data-grid');
+                    basicDemo.style.gridTemplateColumns = val;
+                    basicCode.textContent = 
+`.grid-container {
+  display: grid;
+  grid-template-columns: ${val};
+  gap: 1rem;
+}`;
+                });
+            });
+
+            // Section 2: Fluid Responsive Grid
+            const fluidSlider = document.getElementById('minmax-slider');
+            const fluidVal = document.getElementById('minmax-val');
+            const fluidGrid = document.getElementById('fluid-grid-demo');
+            const fluidCode = document.getElementById('fluid-grid-code');
+
+            fluidSlider.addEventListener('input', () => {
+                const px = fluidSlider.value + 'px';
+                fluidVal.textContent = px;
+                fluidGrid.style.gridTemplateColumns = `repeat(auto-fit, minmax(${px}, 1fr))`;
+                fluidCode.textContent = 
+`.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(${px}, 1fr));
+  gap: 1rem;
+}`;
+            });
+
+            // Section 3: Named Grid Areas
+            const namedStage = document.getElementById('named-grid-stage');
+            const namedCode = document.getElementById('named-areas-code');
+            const deskBtn = document.getElementById('layout-desktop-btn');
+            const stackBtn = document.getElementById('layout-stacked-btn');
+            const fullBtn = document.getElementById('layout-fullwidth-btn');
+
+            function setActiveLayoutBtn(active) {
+                [deskBtn, stackBtn, fullBtn].forEach(b => b.classList.remove('active'));
+                active.classList.add('active');
+            }
+
+            deskBtn.addEventListener('click', () => {
+                setActiveLayoutBtn(deskBtn);
+                namedStage.style.gridTemplateColumns = '220px 1fr';
+                namedStage.style.gridTemplateAreas = '"header header" "sidebar main" "footer footer"';
+                namedCode.textContent = 
+`.page-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 0.75rem;
+}`;
+            });
+
+            stackBtn.addEventListener('click', () => {
+                setActiveLayoutBtn(stackBtn);
+                namedStage.style.gridTemplateColumns = '1fr';
+                namedStage.style.gridTemplateAreas = '"header" "main" "sidebar" "footer"';
+                namedCode.textContent = 
+`.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+  gap: 0.75rem;
+}`;
+            });
+
+            fullBtn.addEventListener('click', () => {
+                setActiveLayoutBtn(fullBtn);
+                namedStage.style.gridTemplateColumns = '1fr';
+                namedStage.style.gridTemplateAreas = '"header" "sidebar" "main" "footer"';
+                namedCode.textContent = 
+`.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "main"
+    "footer";
+  gap: 0.75rem;
+}`;
+            });
+        })();
+    </script>
+</body>
+
+</html>

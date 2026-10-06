@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2: Quotations &amp; Code Formatting | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of HTML5 quotation, citation, and computer code formatting elements.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 2: Quotations &amp; Code Formatting</span></nav>
+            <h1 style="margin-top: 1rem;">Assignment 2: Quotations, Citations &amp; Computer Code</h1>
+            <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1.5rem;">Explore semantic quotations, source citations, abbreviations, keyboard input tags, and preformatted computer code blocks.</p>
+            <hr style="margin: 1.5rem 0;">
+
+            <!-- Section 1: Blockquote & Cite -->
+            <section style="margin-bottom: 2rem;">
+                <h2>1. Long Quotations with Blockquote &amp; Cite</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">The <code>&lt;blockquote&gt;</code> element represents an extended quotation from external material, coupled with a <code>cite</code> attribute and a <code>&lt;cite&gt;</code> tag citing the speaker.</p>
+                <blockquote cite="https://www.w3.org/People/Berners-Lee/" style="border-left: 4px solid var(--primary-color); padding: 1rem 1.5rem; background-color: var(--light-bg); margin: 1.25rem 0; border-radius: 0 6px 6px 0; font-style: italic; line-height: 1.7;">
+                    &ldquo;The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.&rdquo;
+                    <footer style="margin-top: 0.75rem; font-style: normal; font-weight: 600; color: var(--dark-color);">&mdash; <cite>Tim Berners-Lee</cite>, Inventor of the World Wide Web</footer>
+                </blockquote>
+            </section>
+            <hr style="margin: 1.5rem 0;">
+
+            <!-- Section 2: Inline Quotations & Abbreviations -->
+            <section style="margin-bottom: 2rem;">
+                <h2>2. Inline Quotations &amp; Abbreviations</h2>
+                <p style="margin-top: 0.5rem; line-height: 1.8;">
+                    During the early development of the Web, <cite>Tim Berners-Lee</cite> famously asserted that <q>the power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.</q>
+                </p>
+                <p style="margin-top: 1rem; line-height: 1.8;">
+                    Technical specifications for the open web platform are developed and published by the <abbr title="World Wide Web Consortium">W3C</abbr>, which maintains standards for <abbr title="HyperText Markup Language">HTML</abbr>, CSS, and web accessibility.
+                </p>
+            </section>
+            <hr style="margin: 1.5rem 0;">
+
+            <!-- Section 3: Computer Code Formatting -->
+            <section>
+                <h2>3. Computer Code Formatting</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted); margin-bottom: 1.25rem;">HTML provides structural tags to convey keyboard commands, inline programmatic terms, preformatted blocks, and computer terminal output.</p>
+
+                <!-- Keyboard Keys -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Keyboard Keys (&lt;kbd&gt;)</h3>
+                    <p>To open developer tools in most web browsers, press <kbd style="background-color: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px 7px; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 0.9em; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">Ctrl</kbd> + <kbd style="background-color: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px 7px; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 0.9em; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">Shift</kbd> + <kbd style="background-color: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px 7px; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 0.9em; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">I</kbd> on Windows or Linux.</p>
+                </div>
+
+                <!-- Inline Code -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Inline Code (&lt;code&gt;)</h3>
+                    <p>Use the <code style="background-color: #f1f5f9; padding: 0.2rem 0.45rem; border-radius: 4px; font-family: Consolas, 'Courier New', Courier, monospace; color: #d97706; font-size: 0.95em;">&lt;blockquote&gt;</code> element for block quotes and the <code style="background-color: #f1f5f9; padding: 0.2rem 0.45rem; border-radius: 4px; font-family: Consolas, 'Courier New', Courier, monospace; color: #d97706; font-size: 0.95em;">cite</code> attribute to link the quote origin.</p>
+                </div>
+
+                <!-- Preformatted Block -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Preformatted Block Code (&lt;pre&gt; &amp; &lt;code&gt;)</h3>
+                    <pre style="background-color: var(--dark-color); color: #f8fafc; padding: 1.25rem; border-radius: 6px; overflow-x: auto; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 0.925rem; line-height: 1.55;"><code><span style="color: #94a3b8;">&lt;!-- Example of Semantic Quotations --&gt;</span>
+<span style="color: #38bdf8;">&lt;blockquote</span> <span style="color: #f472b6;">cite=</span><span style="color: #a5f3fc;">&quot;https://www.w3.org/&quot;</span><span style="color: #38bdf8;">&gt;</span>
+    <span style="color: #f8fafc;">Universal access is the foundation of the Web.</span>
+    <span style="color: #38bdf8;">&lt;footer&gt;</span>— <span style="color: #38bdf8;">&lt;cite&gt;</span><span style="color: #fde047;">Tim Berners-Lee</span><span style="color: #38bdf8;">&lt;/cite&gt;&lt;/footer&gt;</span>
+<span style="color: #38bdf8;">&lt;/blockquote&gt;</span></code></pre>
+                </div>
+
+                <!-- Terminal Output -->
+                <div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Terminal Output (&lt;samp&gt;)</h3>
+                    <samp style="display: block; background-color: #0f172a; color: #4ade80; padding: 1rem 1.25rem; border-radius: 6px; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 0.925rem; line-height: 1.6; border: 1px solid #1e293b;">
+$ web-server --status<br>
+[OK] Server listening on http://127.0.0.1:8080/<br>
+[SUCCESS] Document tree validated without errors. Status: 200 OK.
+                    </samp>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

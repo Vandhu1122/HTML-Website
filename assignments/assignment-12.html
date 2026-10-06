@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 12: Multimedia Audio &amp; Video | Web Development Learning Hub</title>
+    <meta name="description" content="Assignment demonstrating HTML5 audio and video playback, loop, autoplay, poster frames, and responsive iframes.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Audio Section -->
+        <!-- audio code -->
+        <section class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 12: Multimedia Audio &amp; Video</span></nav>
+            <h1>HTML Multimedia — Audio</h1>
+
+            <h2 style="margin-top: 1.5rem;"> 1. Simple Audio </h2>
+            <audio src="https://www.w3schools.com/html/horse.mp3" controls style="width: 100%; margin-top: 0.5rem;">
+                Your browser does not support the audio element.
+            </audio>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 2. Autoplay Audio (Muted) </h2>
+            <audio src="https://www.w3schools.com/html/horse.mp3" autoplay muted controls style="width: 100%; margin-top: 0.5rem;">
+                Your browser does not support the audio element.
+            </audio>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 3. Loop Audio </h2>
+            <audio src="https://www.w3schools.com/html/horse.mp3" loop controls style="width: 100%; margin-top: 0.5rem;">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- Video Section -->
+        <!-- video code -->
+        <section class="card">
+            <h1>HTML Multimedia — Video</h1>
+
+            <h2 style="margin-top: 1.5rem;"> 1. Simple Video </h2>
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" height="300" controls style="max-width: 100%; height: auto; margin-top: 0.5rem;">
+                Your browser does not support the video tag.
+            </video>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 2. Autoplay Video (Muted) </h2>
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" height="300" autoplay muted controls style="max-width: 100%; height: auto; margin-top: 0.5rem;">
+                Your browser does not support the video tag.
+            </video>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 3. Loop Video </h2>
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" height="300" loop controls style="max-width: 100%; height: auto; margin-top: 0.5rem;">
+                Your browser does not support the video tag.
+            </video>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 4. Video with Poster </h2>
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" poster="../assets/images/vandana-image.jpg" height="300" controls style="max-width: 100%; height: auto; margin-top: 0.5rem;">
+                Your browser does not support the video tag.
+            </video>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 5. Embedded Video </h2>
+            <div class="video-wrapper" style="margin-top: 0.5rem;">
+                <iframe src="https://www.youtube.com/embed/Ot4aTmq7ZL0?si=d77QTjWoz1RtPKc2"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

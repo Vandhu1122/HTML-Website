@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 20: CSS Transitions &amp; Keyframe Animations | Web Development Learning Hub</title>
+    <meta name="description" content="Explore CSS transitions, timing functions, easing curves, and continuous @keyframes animations with interactive demonstrations.">
+    <!-- Open Graph Metadata Tags for Social Sharing -->
+    <meta property="og:title" content="Assignment 20: CSS Transitions &amp; Keyframe Animations | Web Development Learning Hub">
+    <meta property="og:description" content="Explore CSS transitions, timing functions, easing curves, and continuous @keyframes animations with interactive demonstrations.">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .anim-demo-wrapper {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Section 1: Hover Transitions */
+        .hover-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .transition-card-demo {
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .with-transition {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .with-transition:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary-color);
+            background-color: var(--surface-bg);
+        }
+
+        .without-transition:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+        }
+
+        .btn-animated-demo {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        }
+
+        .btn-animated-demo:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+            filter: brightness(1.1);
+        }
+
+        .btn-animated-demo:active {
+            transform: scale(0.98) translateY(0);
+        }
+
+        /* Section 2: Timing Functions Race */
+        .timing-race-track {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .race-lane {
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lane-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-family: monospace;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .lane-track-bar {
+            height: 28px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        [data-theme="dark"] .lane-track-bar {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .race-runner {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .race-active .runner-linear {
+            animation: runAcross 2.2s linear infinite alternate;
+        }
+
+        .race-active .runner-ease {
+            animation: runAcross 2.2s ease infinite alternate;
+        }
+
+        .race-active .runner-ease-in {
+            animation: runAcross 2.2s ease-in infinite alternate;
+        }
+
+        .race-active .runner-ease-out {
+            animation: runAcross 2.2s ease-out infinite alternate;
+        }
+
+        .race-active .runner-ease-in-out {
+            animation: runAcross 2.2s ease-in-out infinite alternate;
+        }
+
+        .race-active .runner-bounce {
+            animation: runAcross 2.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+        }
+
+        @keyframes runAcross {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: calc(100% - 24px);
+            }
+        }
+
+        /* Section 3: Keyframe Continuous Animations */
+        .keyframes-stage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+        }
+
+        .keyframe-box {
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.75rem 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Pulsing Beacon */
+        .beacon-wrapper {
+            position: relative;
+            width: 28px;
+            height: 28px;
+            margin: 1rem 0;
+        }
+
+        .beacon-dot {
+            width: 14px;
+            height: 14px;
+            background-color: #10b981;
+            border-radius: 50%;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+        }
+
+        .beacon-pulse {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: rgba(16, 185, 129, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: pulseBeacon 1.6s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+        }
+
+        @keyframes pulseBeacon {
+            0% {
+                transform: scale(0.6);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Rotating Loader */
+        .spinner-loader {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            margin: 1rem 0;
+            animation: spinLoader 0.9s linear infinite;
+        }
+
+        @keyframes spinLoader {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Skeleton Progress Shimmer */
+        .shimmer-card {
+            width: 85%;
+            height: 18px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+            background-size: 200% 100%;
+            animation: shimmerGradient 1.5s infinite;
+            margin: 0.5rem 0;
+        }
+
+        [data-theme="dark"] .shimmer-card {
+            background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+            background-size: 200% 100%;
+        }
+
+        @keyframes shimmerGradient {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .paused-animations * {
+            animation-play-state: paused !important;
+        }
+
+        .code-display {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav aria-label="Main Navigation">
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <a href="../index.html">Home</a> &rsaquo;
+                <a href="../assignments.html">Assignments</a> &rsaquo;
+                <span>Assignment 20: CSS Transitions &amp; Keyframe Animations</span>
+            </nav>
+            <h1 style="margin-top: 1rem;">Assignment 20: CSS Transitions &amp; Keyframe Animations</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                Explore CSS transitions between state changes, compare timing curves with an interactive race track, and build continuous looping animations using <code>@keyframes</code>.
+            </p>
+
+            <!-- Section 1: Hover Transitions -->
+            <section style="margin-bottom: 3rem;">
+                <h2>1. State Transitions (<code>transition: property duration timing-function</code>)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    CSS transitions allow values to change smoothly over a specified duration rather than snapping instantaneously. Hover your cursor over both cards below to see the visual contrast:
+                </p>
+
+                <div class="anim-demo-wrapper">
+                    <div class="hover-cards-grid">
+                        <div class="transition-card-demo with-transition">
+                            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">With Smooth Transition</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">
+                                <code>transition: transform 0.3s ease, box-shadow 0.3s ease;</code>
+                            </p>
+                            <span style="font-size: 0.8rem; font-weight: 600; color: #10b981;">&bull; Fluid Elevation &amp; Glow</span>
+                        </div>
+
+                        <div class="transition-card-demo without-transition">
+                            <h3 style="color: #ef4444; margin-bottom: 0.5rem;">Without Transition (Abrupt)</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">
+                                <code>transition: none;</code> (Instant jump)
+                            </p>
+                            <span style="font-size: 0.8rem; font-weight: 600; color: #ef4444;">&bull; Jarring Instant Shift</span>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <button type="button" class="btn-animated-demo">Interactive Animated Button (Hover &amp; Click)</button>
+                    </div>
+
+                    <pre class="code-display"><code>.smooth-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.smooth-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+}</code></pre>
+                </div>
+            </section>
+
+            <hr style="margin: 2.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Section 2: Timing Functions Race -->
+            <section style="margin-bottom: 3rem;">
+                <h2>2. Timing Functions &amp; Easing Curves Race</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    Timing functions dictate how acceleration occurs over time. All runners below share the exact same duration (2.2 seconds), but reach milestones differently based on their easing curve:
+                </p>
+
+                <div class="anim-demo-wrapper">
+                    <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+                        <button type="button" id="btn-toggle-race" class="btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;">Toggle Live Animation Race</button>
+                        <span id="race-status-text" style="font-size: 0.85rem; color: var(--text-muted);">Status: Active loop running</span>
+                    </div>
+
+                    <div id="timing-race-container" class="timing-race-track race-active">
+                        <div class="race-lane">
+                            <div class="lane-header">
+                                <strong>linear</strong>
+                                <span>Steady constant velocity</span>
+                            </div>
+                            <div class="lane-track-bar">
+                                <div class="race-runner runner-linear">&rarr;</div>
+                            </div>
+                        </div>
+
+                        <div class="race-lane">
+                            <div class="lane-header">
+                                <strong>ease</strong>
+                                <span>Default: slow start, quick, slow finish</span>
+                            </div>
+                            <div class="lane-track-bar">
+                                <div class="race-runner runner-ease">&rarr;</div>
+                            </div>
+                        </div>
+
+                        <div class="race-lane">
+                            <div class="lane-header">
+                                <strong>ease-in</strong>
+                                <span>Starts slow and accelerates steadily</span>
+                            </div>
+                            <div class="lane-track-bar">
+                                <div class="race-runner runner-ease-in">&rarr;</div>
+                            </div>
+                        </div>
+
+                        <div class="race-lane">
+                            <div class="lane-header">
+                                <strong>ease-out</strong>
+                                <span>Fast start, decelerates gently at the end</span>
+                            </div>
+                            <div class="lane-track-bar">
+                                <div class="race-runner runner-ease-out">&rarr;</div>
+                            </div>
+                        </div>
+
+                        <div class="race-lane">
+                            <div class="lane-header">
+                                <strong>ease-in-out</strong>
+                                <span>Slow start and slow finish, fast middle</span>
+                            </div>
+                            <div class="lane-track-bar">
+                                <div class="race-runner runner-ease-in-out">&rarr;</div>
+                            </div>
+                        </div>
+
+                        <div class="race-lane">
+                            <div class="lane-header">
+                                <strong>cubic-bezier(0.68, -0.55, 0.27, 1.55)</strong>
+                                <span>Elastic bounce / overshoot curve</span>
+                            </div>
+                            <div class="lane-track-bar">
+                                <div class="race-runner runner-bounce">&rarr;</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="margin: 2.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Section 3: Keyframe Continuous Animations -->
+            <section style="margin-bottom: 2rem;">
+                <h2>3. Continuous Loop Animations (<code>@keyframes</code>)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    <code>@keyframes</code> allows multi-stage continuous animations that do not rely on user interaction triggers:
+                </p>
+
+                <div class="anim-demo-wrapper">
+                    <div style="margin-bottom: 1rem;">
+                        <button type="button" id="btn-toggle-pause" class="btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">Pause All Keyframe Loops</button>
+                    </div>
+
+                    <div id="keyframes-area" class="keyframes-stage">
+                        <!-- Pulsing Beacon -->
+                        <div class="keyframe-box">
+                            <h4>Pulsing Status Beacon</h4>
+                            <div class="beacon-wrapper">
+                                <div class="beacon-pulse"></div>
+                                <div class="beacon-dot"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Live status indicator</p>
+                        </div>
+
+                        <!-- Rotating Loader -->
+                        <div class="keyframe-box">
+                            <h4>Rotating CSS Spinner</h4>
+                            <div class="spinner-loader"></div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Loading spinner indicator</p>
+                        </div>
+
+                        <!-- Progress Shimmer -->
+                        <div class="keyframe-box">
+                            <h4>Content Shimmer Skeleton</h4>
+                            <div class="shimmer-card"></div>
+                            <div class="shimmer-card" style="width: 65%;"></div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Skeleton shimmer placeholder</p>
+                        </div>
+                    </div>
+
+                    <pre class="code-display"><code>@keyframes pulseBeacon {
+  0%   { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.0); opacity: 0.0; }
+}
+
+@keyframes spinLoader {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shimmerGradient {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}</code></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Animation Controls Script -->
+    <script>
+        (function() {
+            // Race toggle
+            const raceContainer = document.getElementById('timing-race-container');
+            const toggleRaceBtn = document.getElementById('btn-toggle-race');
+            const raceStatusText = document.getElementById('race-status-text');
+
+            toggleRaceBtn.addEventListener('click', () => {
+                const isActive = raceContainer.classList.toggle('race-active');
+                toggleRaceBtn.textContent = isActive ? 'Pause Animation Race' : 'Start Animation Race';
+                raceStatusText.textContent = isActive ? 'Status: Active loop running' : 'Status: Race paused';
+            });
+
+            // Pause all loops toggle
+            const keyframesArea = document.getElementById('keyframes-area');
+            const togglePauseBtn = document.getElementById('btn-toggle-pause');
+
+            togglePauseBtn.addEventListener('click', () => {
+                const isPaused = keyframesArea.classList.toggle('paused-animations');
+                togglePauseBtn.textContent = isPaused ? 'Resume Keyframe Loops' : 'Pause All Keyframe Loops';
+            });
+        })();
+    </script>
+</body>
+
+</html>

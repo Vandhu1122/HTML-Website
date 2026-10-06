@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Vandhu1122.github.io/HTML-Website/sitemap.xml

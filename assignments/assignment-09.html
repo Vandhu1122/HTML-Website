@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 09: Hyperlinks &amp; Bookmarks | Web Development Learning Hub</title>
+    <meta name="description" content="Assignment demonstrating various HTML link types: external, tabs, tooltips, image links, email, telephone, and bookmarks.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 9: Hyperlink Types</span></nav>
+            <h1>Assignment 9: Hyperlinks &amp; Bookmarks</h1>
+
+            <h2 style="margin-top: 1.5rem;"> 1. Simple Link </h2>
+            <p><a href="https://rusdm.in/"> RUSDM </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 2. Link Open in New Tab </h2>
+            <p><a href="https://rusdm.in/" target="_blank" rel="noopener noreferrer"> Open RUSDM in New Tab </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 3. Link with Tooltip </h2>
+            <p><a href="https://rusdm.in/" target="_blank" rel="noopener noreferrer" title="RUSDM official website"> RUSDM (Hover for tooltip) </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 4. Link with Image </h2>
+            <p>
+                <a href="https://rusdm.in/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                    <img src="../assets/images/logo.jpg" width="150" height="150" alt="Logo" style="border-radius: 4px; object-fit: cover;">
+                    <span>RUSDM Logo Link</span>
+                </a>
+            </p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 5. Email Link </h2>
+            <p><a href="mailto:demo@example.com"> Send email to demo@example.com </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 6. Call Link </h2>
+            <p><a href="tel:+1-555-0100"> Call now: +1-555-0100 </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 7. Relative Page Link </h2>
+            <p><a href="assignment-03.html"> Visit Assignment 03 </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 8. Bookmark Link </h2>
+            <p><a href="#book"> Go to book section </a></p>
+            <hr style="margin: 1.5rem 0;">
+
+            <div id="book" style="padding: 1rem; background-color: var(--light-bg); border-radius: 4px;">
+                <h2> Book Section </h2>
+                <p> This is the book section referenced by the in-page bookmark link above. </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

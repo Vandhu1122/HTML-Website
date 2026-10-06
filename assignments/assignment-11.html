@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 11: Advanced HTML5 Form Controls | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of modern HTML5 form input types, datalists, fieldsets, and gauge elements.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 11: Advanced Form Inputs &amp; Controls</span></nav>
+            <h1 style="margin-top: 1rem;">Assignment 11: Advanced HTML5 Form Inputs &amp; Controls</h1>
+            <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1.5rem;">Explore modern HTML5 specialized form inputs, structured fieldsets, range sliders, autocomplete datalists, and native metric gauges.</p>
+            <hr style="margin: 1.5rem 0;">
+
+            <form action="#" method="get">
+                <!-- Fieldset 1: Date & Color pickers -->
+                <fieldset style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 2rem; background-color: var(--surface-bg);">
+                    <legend style="padding: 0 0.5rem; font-weight: 600; color: var(--dark-color); font-size: 1.15rem;">Fieldset 1: Date &amp; Color Pickers</legend>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">Native browser pickers provide user-friendly calendar and palette interfaces without requiring third-party libraries.</p>
+
+                    <div class="form-group">
+                        <label for="course-start-date">Course Start Date</label>
+                        <input type="date" id="course-start-date" name="course_start_date" class="form-control" style="max-width: 320px;" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="theme-color">Choose Accent Theme Color</label>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.35rem;">
+                            <input type="color" id="theme-color" name="theme_color" value="#2563eb" style="width: 60px; height: 40px; padding: 2px; border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer;">
+                            <span style="font-size: 0.925rem; color: var(--text-muted);">Select a color value (e.g. brand accent)</span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Fieldset 2: Sliders & Autocomplete datalist -->
+                <fieldset style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 2rem; background-color: var(--surface-bg);">
+                    <legend style="padding: 0 0.5rem; font-weight: 600; color: var(--dark-color); font-size: 1.15rem;">Fieldset 2: Sliders &amp; Autocomplete Datalist</legend>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">Range sliders capture graded values, and datalists offer autocomplete suggestions while permitting custom entries.</p>
+
+                    <div class="form-group">
+                        <label for="skill-slider">Experience Level Range (1 to 10)</label>
+                        <input type="range" id="skill-slider" name="experience_level" min="1" max="10" value="7" style="width: 100%; max-width: 480px; margin-top: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; max-width: 480px; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">
+                            <span>1 (Beginner)</span>
+                            <span>5 (Intermediate)</span>
+                            <span>10 (Mastery)</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="course-choice">Select or Type Course Name (Autocomplete)</label>
+                        <input list="course-options" id="course-choice" name="course_choice" class="form-control" placeholder="Search available courses..." style="max-width: 480px;">
+                        <datalist id="course-options">
+                            <option value="HTML5 Semantic Layout &amp; Elements">
+                            <option value="Advanced HTML5 Form Controls">
+                            <option value="CSS Modern Grid &amp; Flexbox Layouts">
+                            <option value="Responsive Web Media &amp; Audio">
+                            <option value="Web Accessibility Guidelines (WCAG)">
+                        </datalist>
+                        <small style="color: var(--text-muted); display: block; margin-top: 0.35rem;">Start typing to filter suggested course titles from the datalist.</small>
+                    </div>
+                </fieldset>
+
+                <!-- Fieldset 3: Gauges & Progress elements -->
+                <fieldset style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 2rem; background-color: var(--surface-bg);">
+                    <legend style="padding: 0 0.5rem; font-weight: 600; color: var(--dark-color); font-size: 1.15rem;">Fieldset 3: Gauges &amp; Progress Elements</legend>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">Progress elements denote task completion status, while meter elements display scalar measurement gauges within a known range.</p>
+
+                    <div class="form-group">
+                        <label for="module-progress">Curriculum Completion Progress (70%)</label>
+                        <progress id="module-progress" value="70" max="100" style="width: 100%; max-width: 480px; height: 24px; margin-top: 0.35rem; display: block;"></progress>
+                        <span style="font-size: 0.875rem; color: var(--text-muted); display: block; margin-top: 0.35rem;">Current value: 70 out of 100 modules completed.</span>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="quiz-meter">Assessment Performance Gauge (85/100)</label>
+                        <meter id="quiz-meter" value="85" min="0" max="100" low="40" high="75" optimum="90" style="width: 100%; max-width: 480px; height: 26px; margin-top: 0.35rem; display: block;"></meter>
+                        <span style="font-size: 0.875rem; color: var(--text-muted); display: block; margin-top: 0.35rem;">Score: 85 (Scale: 0-100, Low: 40, High: 75, Optimum: 90).</span>
+                    </div>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <div style="margin-top: 1rem;">
+                    <button type="submit" class="btn-primary" style="max-width: 240px;">Submit Form</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 14: SVG Vector Graphics &amp; Canvas | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of inline Scalable Vector Graphics (SVG) shapes, icons, and dynamic HTML5 Canvas graphics.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 14: SVG Vector Graphics &amp; Canvas</span></nav>
+            <h1 style="margin-top: 1rem;">Assignment 14: Scalable Vector Graphics (&lt;svg&gt;) &amp; Canvas</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Compare vector resolution-independent graphics with dynamic raster canvas rendering.</p>
+
+            <!-- Inline SVG Section -->
+            <section style="margin-bottom: 2rem;">
+                <h2>1. Inline Scalable Vector Graphics (&lt;svg&gt;)</h2>
+                <p style="margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);">Vector graphics retain crisp clarity at all screen pixel densities and zoom levels.</p>
+
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <!-- Geometric Shapes -->
+                    <div style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; text-align: center; background-color: var(--surface-bg);">
+                        <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="15" width="110" height="110" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/>
+                            <circle cx="70" cy="70" r="36" fill="#2563eb"/>
+                            <polygon points="70,45 80,68 105,68 85,82 92,105 70,90 48,105 55,82 35,68 60,68" fill="#ffffff"/>
+                        </svg>
+                        <p style="font-weight: 600; margin-top: 0.5rem;">Geometric Composite</p>
+                    </div>
+
+                    <!-- Code Icon -->
+                    <div style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; text-align: center; background-color: var(--surface-bg);">
+                        <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                            <line x1="14" y1="4" x2="10" y2="20"></line>
+                        </svg>
+                        <p style="font-weight: 600; margin-top: 0.5rem;">HTML Icon Badge</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- HTML5 Canvas Section -->
+            <section style="margin-bottom: 2rem;">
+                <h2>2. Dynamic HTML5 Canvas (&lt;canvas&gt;)</h2>
+                <p style="margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);">Canvas provides a scriptable pixel canvas ideal for diagrams, chart rendering, and 2D games.</p>
+
+                <canvas id="demo-canvas" width="400" height="180" style="border: 1px solid var(--border-color); border-radius: var(--border-radius); background-color: #0f172a; max-width: 100%;"></canvas>
+            </section>
+        </div>
+    </main>
+
+    <!-- Canvas Drawing Script -->
+    <script>
+        const canvas = document.getElementById('demo-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw vertical gradient for bars
+        const gradient = ctx.createLinearGradient(0, 30, 0, 140);
+        gradient.addColorStop(0, '#38bdf8');
+        gradient.addColorStop(1, '#2563eb');
+
+        // Chart data
+        const items = [
+            { label: 'HTML', x: 40, y: 95, w: 50, h: 45 },
+            { label: 'CSS', x: 120, y: 55, w: 50, h: 85 },
+            { label: 'JS', x: 200, y: 25, w: 50, h: 115 },
+            { label: 'SVG', x: 280, y: 70, w: 50, h: 70 }
+        ];
+
+        // Draw bars
+        ctx.fillStyle = gradient;
+        items.forEach(item => {
+            ctx.fillRect(item.x, item.y, item.w, item.h);
+        });
+
+        // Labels
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '13px system-ui, -apple-system, sans-serif';
+        items.forEach(item => {
+            ctx.fillText(item.label, item.x + 8, 160);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

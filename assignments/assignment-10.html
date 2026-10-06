@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 10: HTML Tables | Web Development Learning Hub</title>
+    <meta name="description" content="Assignment demonstrating HTML tables, captions, headers, colspan, rowspan, structural tags, and cell properties.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 10: HTML Tables</span></nav>
+            <h1>Assignment 10: HTML Tables</h1>
+
+            <h2 style="margin-top: 1.5rem;"> 1. Simple Table </h2>
+            <table>
+                <tr>
+                    <th> Name </th>
+                    <th> Age </th>
+                    <th> Course </th>
+                    <th> College </th>
+                </tr>
+                <tr>
+                    <td> Kaddu </td>
+                    <td> 28 </td>
+                    <td> Computer Science </td>
+                    <td> Nk College </td>
+                </tr>
+                <tr>
+                    <td> Vandana </td>
+                    <td> 28 </td>
+                    <td> Computer Science </td>
+                    <td> Nk College </td>
+                </tr>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 2. Table with Caption </h2>
+            <table>
+                <caption style="caption-side: top; font-weight: bold; margin-bottom: 0.5rem; text-align: left;"> Student Information </caption>
+                <tr>
+                    <th> Name </th>
+                    <th> Age </th>
+                    <th> Course </th>
+                    <th> College </th>
+                </tr>
+                <tr>
+                    <td> Kaddu </td>
+                    <td> 28 </td>
+                    <td> Computer Science </td>
+                    <td> Nk College </td>
+                </tr>
+                <tr>
+                    <td> Vandana </td>
+                    <td> 28 </td>
+                    <td> Computer Science </td>
+                    <td> Nk College </td>
+                </tr>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 3. Background Color in Tables </h2>
+            <table>
+                <tr style="background-color: #fef08a;">
+                    <th> Name </th>
+                    <th> Age </th>
+                    <th> Course </th>
+                    <th> College </th>
+                </tr>
+                <tr>
+                    <td style="background-color: #fecaca;"> Kaddu </td>
+                    <td> 28 </td>
+                    <td> Computer Science </td>
+                    <td> Nk College </td>
+                </tr>
+                <tr>
+                    <td> Vandana </td>
+                    <td> 28 </td>
+                    <td> Computer Science </td>
+                    <td> Nk College </td>
+                </tr>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 4. Colspan Examples </h2>
+            <table>
+                <tr>
+                    <th colspan="2" style="text-align: center;"> Full Name </th>
+                </tr>
+                <tr>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                </tr>
+                <tr>
+                    <td> Vandana </td>
+                    <td> Pal </td>
+                </tr>
+                <tr>
+                    <td> Kaddu </td>
+                    <td> Chaudhary </td>
+                </tr>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 5. Rowspan Examples </h2>
+            <table>
+                <tr>
+                    <th> Name </th>
+                    <th> Subject </th>
+                </tr>
+                <tr>
+                    <td rowspan="2"> Vandana </td>
+                    <td> Maths </td>
+                </tr>
+                <tr>
+                    <td> Science </td>
+                </tr>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 6. Structured Table Examples (thead, tbody, tfoot) </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Product </th>
+                        <th> Price </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Laptop </td>
+                        <td> 25000 </td>
+                    </tr>
+                    <tr>
+                        <td> Mobile </td>
+                        <td> 35000 </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr style="font-weight: bold; background-color: #f8fafc;">
+                        <td> Total </td>
+                        <td> 60000 </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 7. Table Sizing </h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 50%; min-height: 150px;">
+                    <tr>
+                        <th> Name </th>
+                        <th> Age </th>
+                    </tr>
+                    <tr>
+                        <td> Kaddu </td>
+                        <td> 28 </td>
+                    </tr>
+                    <tr>
+                        <td> Vandana </td>
+                        <td> 28 </td>
+                    </tr>
+                </table>
+            </div>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 8. Cell Padding and Spacing </h2>
+            <table>
+                <tr>
+                    <th> Name </th>
+                    <th> Age </th>
+                </tr>
+                <tr>
+                    <td> Kaddu </td>
+                    <td> 28 </td>
+                </tr>
+                <tr>
+                    <td> Vandana </td>
+                    <td> 28 </td>
+                </tr>
+            </table>
+            <hr style="margin: 1.5rem 0;">
+
+            <h2> 9. Image Inside Table </h2>
+            <table>
+                <tr>
+                    <th> Name </th>
+                    <th> Photo </th>
+                </tr>
+                <tr>
+                    <td> Kaddu </td>
+                    <td> 28 </td>
+                </tr>
+                <tr>
+                    <td> Vandana </td>
+                    <td>
+                        <img src="../assets/images/vandana-image.jpg" alt="Vandana sample photograph" width="200" height="250" style="max-width: 100%; height: auto; border-radius: 4px;">
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
