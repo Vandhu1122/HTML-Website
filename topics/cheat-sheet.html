@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Quick Reference Cheat Sheet | Web Development Learning Hub</title>
+    <meta name="description" content="Comprehensive lookup table for essential HTML5 tags, semantic landmarks, forms, and media elements.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../assignments.html">&larr; Back to Assignments</a>
+                <a href="../index.html">Home</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="card">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <a href="../index.html">Home</a> &rsaquo;
+                <a href="../assignments.html">Assignments</a> &rsaquo;
+                <span>HTML5 Cheat Sheet</span>
+            </nav>
+
+            <h1>HTML5 Element Reference Index</h1>
+            <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2rem;">A practical lookup guide cataloging essential HTML5 elements, semantic landmarks, input controls, tabular structures, and multimedia tags.</p>
+
+            <!-- Table 1: Document Architecture & Landmarks -->
+            <h2 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--dark-color);">1. Document Architecture &amp; Landmarks</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Structural elements that establish page landmarks and convey meaningful document hierarchy to browsers and assistive technologies.</p>
+            <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Element</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Landmark / Category</th>
+                            <th scope="col">Syntax Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;header&gt;</code></td>
+                            <td>Introductory container for introductory content, page headers, or navigational aids.</td>
+                            <td>Landmark (banner)</td>
+                            <td><code>&lt;header&gt;&lt;h1&gt;Site Title&lt;/h1&gt;&lt;/header&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;nav&gt;</code></td>
+                            <td>Section containing major navigational links for site or page traversal.</td>
+                            <td>Landmark (navigation)</td>
+                            <td><code>&lt;nav&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/nav&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;main&gt;</code></td>
+                            <td>Container for the dominant, central content unique to the individual document.</td>
+                            <td>Landmark (main)</td>
+                            <td><code>&lt;main&gt;&lt;article&gt;...&lt;/article&gt;&lt;/main&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;section&gt;</code></td>
+                            <td>Generic standalone thematic grouping of content, typically introduced by a heading.</td>
+                            <td>Sectioning Container</td>
+                            <td><code>&lt;section&gt;&lt;h2&gt;Overview&lt;/h2&gt;&lt;/section&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;article&gt;</code></td>
+                            <td>Self-contained, independently distributable composition (e.g., blog post, news story).</td>
+                            <td>Sectioning Container</td>
+                            <td><code>&lt;article&gt;&lt;h2&gt;Article Title&lt;/h2&gt;&lt;/article&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;aside&gt;</code></td>
+                            <td>Complementary section with content tangentially related to surrounding material (e.g., sidebars).</td>
+                            <td>Landmark (complementary)</td>
+                            <td><code>&lt;aside&gt;&lt;h3&gt;Related Links&lt;/h3&gt;&lt;/aside&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;footer&gt;</code></td>
+                            <td>Concluding container for nearest ancestor section or document containing copyright, author, or contact info.</td>
+                            <td>Landmark (contentinfo)</td>
+                            <td><code>&lt;footer&gt;&lt;p&gt;&amp;copy; 2026&lt;/p&gt;&lt;/footer&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 2: Text Semantics & Formatting -->
+            <h2 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--dark-color);">2. Text Semantics &amp; Formatting</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Inline and block phrasing tags that communicate textual importance, quotations, code references, and keyboard keys.</p>
+            <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Element</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Semantic Purpose</th>
+                            <th scope="col">Syntax Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;strong&gt;</code></td>
+                            <td>Indicates strong importance, seriousness, or urgency for its contents.</td>
+                            <td>Importance / Urgency</td>
+                            <td><code>&lt;strong&gt;Warning:&lt;/strong&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;em&gt;</code></td>
+                            <td>Indicates stress emphasis that alters sentence interpretation and voice pitch.</td>
+                            <td>Stress Emphasis</td>
+                            <td><code>&lt;em&gt;Must&lt;/em&gt; complete</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;mark&gt;</code></td>
+                            <td>Represents text highlighted or marked for reference or search relevance.</td>
+                            <td>Reference Highlighting</td>
+                            <td><code>&lt;mark&gt;search keyword&lt;/mark&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;blockquote&gt;</code></td>
+                            <td>Indicates an extended section of quoted text from an external source.</td>
+                            <td>Block Quotation</td>
+                            <td><code>&lt;blockquote cite="..."&gt;...&lt;/blockquote&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;q&gt;</code></td>
+                            <td>Short inline quotation that browsers enclose in quotation marks.</td>
+                            <td>Inline Quotation</td>
+                            <td><code>&lt;q&gt;Web for all&lt;/q&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;abbr&gt;</code></td>
+                            <td>Represents an abbreviation or acronym; full expansion provided via <code>title</code> attribute.</td>
+                            <td>Abbreviation</td>
+                            <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;code&gt;</code></td>
+                            <td>Displays a short fragment of computer source code using a monospaced font.</td>
+                            <td>Inline Code Fragment</td>
+                            <td><code>&lt;code&gt;const total = 100;&lt;/code&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;kbd&gt;</code></td>
+                            <td>Denotes user keyboard input, keystroke sequences, or voice commands.</td>
+                            <td>User Keystroke / Input</td>
+                            <td><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;samp&gt;</code></td>
+                            <td>Represents sample or quoted output from a computer program or system script.</td>
+                            <td>Program / System Output</td>
+                            <td><code>&lt;samp&gt;Success: 200 OK&lt;/samp&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 3: Lists & Tables -->
+            <h2 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--dark-color);">3. Lists &amp; Tables</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Elements designed to organize sequential lists, unordered groups, definitions, and two-dimensional data grids.</p>
+            <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Element</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Type / Role</th>
+                            <th scope="col">Syntax Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;ul&gt;</code></td>
+                            <td>Unordered list of items where order has no explicit sequence, rendered with bullets.</td>
+                            <td>Unordered List Container</td>
+                            <td><code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;/ul&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;ol&gt;</code></td>
+                            <td>Ordered list of numerical or alphabetical items where order represents a sequence.</td>
+                            <td>Ordered List Container</td>
+                            <td><code>&lt;ol&gt;&lt;li&gt;Step 1&lt;/li&gt;&lt;/ol&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;dl&gt;</code></td>
+                            <td>Description list enclosing term (<code>&lt;dt&gt;</code>) and description (<code>&lt;dd&gt;</code>) pairings.</td>
+                            <td>Description List Container</td>
+                            <td><code>&lt;dl&gt;&lt;dt&gt;Term&lt;/dt&gt;&lt;dd&gt;Def&lt;/dd&gt;&lt;/dl&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;table&gt;</code></td>
+                            <td>Tabular data container presenting multidimensional data in rows and columns.</td>
+                            <td>Table Root Container</td>
+                            <td><code>&lt;table&gt;...&lt;/table&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;thead&gt;</code></td>
+                            <td>Encapsulates header rows defining the titles and scope of table columns.</td>
+                            <td>Table Header Group</td>
+                            <td><code>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Col&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;tbody&gt;</code></td>
+                            <td>Encapsulates the set of table rows comprising the primary body data.</td>
+                            <td>Table Body Group</td>
+                            <td><code>&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Val&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;tr&gt;</code></td>
+                            <td>Defines a horizontal row of cells within a table header, body, or footer.</td>
+                            <td>Table Row</td>
+                            <td><code>&lt;tr&gt;&lt;td&gt;Row cell&lt;/td&gt;&lt;/tr&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;th&gt;</code></td>
+                            <td>Header cell providing title and semantic scope (<code>col</code> or <code>row</code>) for cells.</td>
+                            <td>Table Header Cell</td>
+                            <td><code>&lt;th scope="col"&gt;Column 1&lt;/th&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;td&gt;</code></td>
+                            <td>Standard data cell containing tabular values, text, or elements.</td>
+                            <td>Table Data Cell</td>
+                            <td><code>&lt;td&gt;Data Point&lt;/td&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 4: Forms & Interactive Inputs -->
+            <h2 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--dark-color);">4. Forms &amp; Interactive Inputs</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Controls for capturing user inputs, choices, text submissions, validation states, and gauge measurements.</p>
+            <div style="overflow-x: auto; margin-bottom: 2.5rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Element</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Input Model / Role</th>
+                            <th scope="col">Syntax Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;input&gt;</code></td>
+                            <td>Interactive input field supporting various types (text, email, password, radio, etc.).</td>
+                            <td>Interactive Form Input</td>
+                            <td><code>&lt;input type="email" name="user_email" required&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;select&gt;</code></td>
+                            <td>Dropdown control providing a list of selectable <code>&lt;option&gt;</code> choices.</td>
+                            <td>Selection Menu</td>
+                            <td><code>&lt;select&gt;&lt;option&gt;Option 1&lt;/option&gt;&lt;/select&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;textarea&gt;</code></td>
+                            <td>Multi-line plain text editing control for messages, descriptions, and comments.</td>
+                            <td>Multi-line Text Field</td>
+                            <td><code>&lt;textarea rows="4" cols="50"&gt;&lt;/textarea&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;datalist&gt;</code></td>
+                            <td>Predefined set of recommended options providing autocomplete suggestions to an input.</td>
+                            <td>Autocomplete Option Source</td>
+                            <td><code>&lt;datalist id="browsers"&gt;&lt;option value="Chrome"&gt;&lt;/datalist&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;progress&gt;</code></td>
+                            <td>Visual progress bar displaying the completion percentage of a task or upload.</td>
+                            <td>Task Completion Indicator</td>
+                            <td><code>&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;meter&gt;</code></td>
+                            <td>Scalar measurement gauge within a known fractional range (e.g., disk usage, battery).</td>
+                            <td>Scalar Range Gauge</td>
+                            <td><code>&lt;meter min="0" max="100" value="85"&gt;85%&lt;/meter&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;fieldset&gt;</code></td>
+                            <td>Group container that clusters logically related controls and labels together.</td>
+                            <td>Control Group Container</td>
+                            <td><code>&lt;fieldset&gt;&lt;legend&gt;Account&lt;/legend&gt;...&lt;/fieldset&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;legend&gt;</code></td>
+                            <td>Caption or heading representing the purpose of its parent <code>&lt;fieldset&gt;</code>.</td>
+                            <td>Fieldset Caption</td>
+                            <td><code>&lt;legend&gt;Contact Information&lt;/legend&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 5: Multimedia & Graphics -->
+            <h2 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--dark-color);">5. Multimedia &amp; Graphics</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Tags for embedding raster and vector graphics, audio tracks, video streams, canvas drawing, and nested browsing contexts.</p>
+            <div style="overflow-x: auto; margin-bottom: 2rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Element</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Content Media Type</th>
+                            <th scope="col">Syntax Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;img&gt;</code></td>
+                            <td>Embeds an image into the document with accessible alternative text.</td>
+                            <td>Embedded Raster / Vector Image</td>
+                            <td><code>&lt;img src="hero.webp" alt="Landscape illustration"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;picture&gt;</code></td>
+                            <td>Responsive wrapper offering multiple image sources for art direction and device resolution.</td>
+                            <td>Responsive Image Switcher</td>
+                            <td><code>&lt;picture&gt;&lt;source srcset="wide.webp"&gt;&lt;img src="std.jpg" alt=""&gt;&lt;/picture&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;audio&gt;</code></td>
+                            <td>Embeds sound content such as music or audio streams with native playback controls.</td>
+                            <td>Embedded Audio Stream</td>
+                            <td><code>&lt;audio controls src="audio.mp3"&gt;&lt;/audio&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;video&gt;</code></td>
+                            <td>Embeds a video player with controls, captions, poster frame, and fallback sources.</td>
+                            <td>Embedded Video Stream</td>
+                            <td><code>&lt;video controls poster="thumb.jpg" src="movie.mp4"&gt;&lt;/video&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;svg&gt;</code></td>
+                            <td>Inline Scalable Vector Graphics container rendering scalable mathematical paths and shapes.</td>
+                            <td>XML Vector Graphics</td>
+                            <td><code>&lt;svg viewBox="0 0 24 24" width="24" height="24"&gt;...&lt;/svg&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;canvas&gt;</code></td>
+                            <td>Bitmap canvas surface supporting dynamic, scriptable 2D or 3D graphics rendering via JavaScript.</td>
+                            <td>Scriptable Graphics Surface</td>
+                            <td><code>&lt;canvas width="400" height="200"&gt;&lt;/canvas&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;iframe&gt;</code></td>
+                            <td>Nested browsing context embedding an external document, interactive map, or video player.</td>
+                            <td>Embedded Browsing Context</td>
+                            <td><code>&lt;iframe src="https://example.com" title="External resource"&gt;&lt;/iframe&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

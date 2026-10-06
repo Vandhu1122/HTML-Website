@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header Section -->
     <header>
         <div class="nav-container">
@@ -25,11 +27,14 @@
                 <a href="contact.html">Contact</a>
                 <a href="login.html">Login</a>
             </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <section class="card">
             <h1>About This Project</h1>
             <p style="margin-top: 1rem;">The <strong>Web Development Learning Hub</strong> is an educational open-source portfolio created to showcase fundamental web building blocks. It serves as both a reference guide and an interactive demonstration of HTML5 and CSS3 capabilities.</p>
@@ -63,6 +68,12 @@
     <footer>
         <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
     </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

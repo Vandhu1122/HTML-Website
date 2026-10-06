@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "no-inline-style": "off",
+    "no-trailing-whitespace": "off",
+    "long-title": "off",
+    "no-raw-characters": "off",
+    "unique-landmark": "off",
+    "prefer-native-element": "off",
+    "no-implicit-button-type": "off",
+    "tel-non-breaking": "off",
+    "prefer-tbody": "off",
+    "wcag/h63": "off",
+    "no-implicit-input-type": "off",
+    "no-implicit-close": "off",
+    "no-autoplay": "off",
+    "autocomplete-password": "off",
+    "attribute-allowed-values": "off",
+    "no-redundant-for": "off"
+  }
+}

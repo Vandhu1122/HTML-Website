@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header Section -->
     <header>
         <div class="nav-container">
@@ -25,11 +27,14 @@
                 <a href="contact.html">Contact</a>
                 <a href="login.html">Login</a>
             </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <!-- Audio Section -->
         <section class="card">
             <h1>HTML5 Multimedia — Audio</h1>
@@ -83,6 +88,12 @@
     <footer>
         <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
     </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

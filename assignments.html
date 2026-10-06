@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header Section -->
     <header>
         <div class="nav-container">
@@ -25,11 +27,14 @@
                 <a href="contact.html">Contact</a>
                 <a href="login.html">Login</a>
             </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <!-- Intro Section -->
         <section class="card">
             <h1>Coursework &amp; Reference Materials</h1>
@@ -61,6 +66,42 @@
                     <p>Creating external hyperlinks, target attributes, and embedding responsive local and remote images.</p>
                     <a href="topics/links-and-images.html">View Guide &rarr;</a>
                 </div>
+                <div class="grid-card">
+                    <h3>HTML5 Cheat Sheet</h3>
+                    <p>Comprehensive lookup reference table for essential HTML5 tags, semantic landmarks, forms, and multimedia elements.</p>
+                    <a href="topics/cheat-sheet.html">View Cheat Sheet &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Progress Tracker Section -->
+        <section class="card progress-card" id="progress-tracker" aria-label="Student Progress Tracker">
+            <div class="progress-header">
+                <div class="progress-title-area">
+                    <h2>Student Progress Tracker</h2>
+                    <p id="progress-text" class="progress-text">0 of 20 assignments completed (0%)</p>
+                </div>
+                <button type="button" id="reset-progress" class="btn-secondary">Reset Progress</button>
+            </div>
+            <div class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="progress-text">
+                <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+        </section>
+
+        <!-- Search & Category Filters Section -->
+        <section class="card search-filter-card" id="search-filters" aria-label="Coursework Search and Filter">
+            <div class="form-group" style="margin-bottom: 1rem;">
+                <label for="assignment-search" class="sr-only">Search Assignments</label>
+                <input type="search" id="assignment-search" class="form-control" placeholder="Search by topic, tag, or element name...">
+            </div>
+            <div class="filter-chips" role="group" aria-label="Filter assignments by category">
+                <button type="button" class="filter-btn active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="css">CSS Fundamentals</button>
+                <button type="button" class="filter-btn" data-filter="semantics">Semantics</button>
+                <button type="button" class="filter-btn" data-filter="forms">Forms</button>
+                <button type="button" class="filter-btn" data-filter="multimedia">Multimedia</button>
+                <button type="button" class="filter-btn" data-filter="tables">Tables</button>
+                <button type="button" class="filter-btn" data-filter="graphics">Graphics</button>
             </div>
         </section>
 
@@ -68,56 +109,209 @@
         <section class="card" id="assignments">
             <h2>Hands-on Assignments</h2>
             <p style="color: var(--text-muted); margin-bottom: 1rem;">Practical coursework assignments demonstrating specific HTML concepts, features, and components.</p>
+            <div id="no-assignments-msg" style="display: none; text-align: center; padding: 2rem; color: var(--text-muted); font-size: 1rem;">
+                No assignments match your search or filter criteria.
+            </div>
             <div class="grid">
-                <div class="grid-card">
-                    <h3>Assignment 01: Formatting &amp; Attributes</h3>
+                <div class="grid-card" data-category="semantics" data-tags="formatting bold italic mark small del ins attributes">
+                    <h3>Assignment 1: Text Formatting</h3>
                     <p>Text formatting tags (bold, italic, mark, small, del, ins) and link target attributes.</p>
-                    <a href="assignments/assignment-01.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-01.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-01"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card" id="semantics">
-                    <h3>Assignment 03: Semantic Layout &amp; Details</h3>
+                <div class="grid-card" data-category="semantics" data-tags="quotations code cite blockquote abbr kbd pre formatting">
+                    <h3>Assignment 2: Quotations &amp; Code Formatting</h3>
+                    <p>Blockquotes, inline quotations, citations, abbreviations, keyboard input, and formatted code blocks.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-02.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-02"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" id="semantics" data-category="semantics" data-tags="semantic layout header nav main section article details summary footer">
+                    <h3>Assignment 3: Semantic Layout</h3>
                     <p>Page structure using header, nav, main, section, article, details, summary, and footer tags.</p>
-                    <a href="assignments/assignment-03.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-03.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-03"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
-                    <h3>Assignment 04: Divs &amp; Spans</h3>
+                <div class="grid-card" data-category="semantics" data-tags="containers div span block inline styling">
+                    <h3>Assignment 4: Containers</h3>
                     <p>Understanding block-level div containers and inline span elements with styled backgrounds.</p>
-                    <a href="assignments/assignment-04.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-04.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-04"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
-                    <h3>Assignment 05: Unordered Lists</h3>
+                <div class="grid-card" data-category="semantics" data-tags="lists unordered ul li bullets nested markers">
+                    <h3>Assignment 5: Unordered Lists</h3>
                     <p>Bulleted lists, customized markers (circle, square, none), and multi-level nested lists.</p>
-                    <a href="assignments/assignment-05.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-05.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-05"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
-                    <h3>Assignment 06: Ordered Lists</h3>
+                <div class="grid-card" data-category="semantics" data-tags="lists ordered ol li numbers alphabetical roman reversed nested">
+                    <h3>Assignment 6: Ordered Lists</h3>
                     <p>Numbered lists, alphabetical, roman numerals, reversed ordering, and nested sub-lists.</p>
-                    <a href="assignments/assignment-06.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-06.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-06"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
-                    <h3>Assignment 07: Description Lists</h3>
+                <div class="grid-card" data-category="semantics" data-tags="lists description dl dt dd definitions glossary terms">
+                    <h3>Assignment 7: Description Lists</h3>
                     <p>Definition lists using dl, dt, and dd elements for glossaries and term-definition pairs.</p>
-                    <a href="assignments/assignment-07.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-07.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-07"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
-                    <h3>Assignment 08: Background Images</h3>
+                <div class="grid-card" data-category="graphics" data-tags="background images styling imagery css presentation graphics">
+                    <h3>Assignment 8: Background Images</h3>
                     <p>Implementing page background styling and imagery using modern CSS presentation techniques.</p>
-                    <a href="assignments/assignment-08.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-08.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-08"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
-                    <h3>Assignment 09: Hyperlinks &amp; Bookmarks</h3>
+                <div class="grid-card" data-category="semantics" data-tags="hyperlinks links bookmarks mailto tel urls tooltips navigation">
+                    <h3>Assignment 9: Hyperlink Types</h3>
                     <p>Internal bookmarks, external URLs, email mailto links, telephone tel links, and tooltips.</p>
-                    <a href="assignments/assignment-09.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-09.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-09"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
+                <div class="grid-card" data-category="tables" data-tags="tables table caption thead tbody tfoot colspan rowspan data">
                     <h3>Assignment 10: HTML Tables</h3>
                     <p>Comprehensive table structures including captions, thead, tbody, tfoot, colspan, and rowspan.</p>
-                    <a href="assignments/assignment-10.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-10.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-10"> Done
+                        </label>
+                    </div>
                 </div>
-                <div class="grid-card">
+                <div class="grid-card" data-category="forms" data-tags="forms inputs datalist range date slider color progress meter controls">
+                    <h3>Assignment 11: Advanced Form Inputs &amp; Controls</h3>
+                    <p>Modern HTML5 form inputs, date/color pickers, range sliders, datalists, progress, and meter gauges.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-11.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-11"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="multimedia" data-tags="multimedia audio video players poster frames iframes embed media">
                     <h3>Assignment 12: Multimedia Audio &amp; Video</h3>
                     <p>Embedding native HTML5 audio players, video players with poster frames, and external iframes.</p>
-                    <a href="assignments/assignment-12.html">Open Assignment &rarr;</a>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-12.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-12"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="semantics" data-tags="dialog modal accordions details summary disclosure interactive widgets popups">
+                    <h3>Assignment 13: Native Modal Dialogs &amp; Interactive Widgets</h3>
+                    <p>Native dialog elements, modal dialog APIs with backdrop styling, details accordions, and interactive disclosure widgets.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-13.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-13"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="graphics" data-tags="svg canvas graphics vector icons shapes dynamic drawing 2d">
+                    <h3>Assignment 14: SVG Vector Graphics &amp; Canvas</h3>
+                    <p>Inline Scalable Vector Graphics (SVG) with shapes and icons alongside dynamic JavaScript HTML5 Canvas drawing.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-14.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-14"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="multimedia" data-tags="responsive picture srcset media query art direction lazy loading images webp">
+                    <h3>Assignment 15: Responsive Images with &lt;picture&gt;</h3>
+                    <p>Responsive picture elements, media query art direction, resolution switching with srcset, and native lazy loading.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-15.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-15"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="semantics" data-tags="metadata structured data schema microdata time address open graph seo rich snippets">
+                    <h3>Assignment 16: Semantic Metadata &amp; Structured Data</h3>
+                    <p>Machine-readable time elements, address contact cards, microdata attributes, and Open Graph metadata.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-16.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-16"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="css" data-tags="css box model sizing margin border padding content content-box border-box margin collapse">
+                    <h3>Assignment 17: CSS Box Model &amp; Sizing</h3>
+                    <p>Visual box model diagram, content-box vs border-box sizing calculations, and vertical margin collapse.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-17.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-17"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="css" data-tags="css flexbox layout playground flex-direction justify-content align-items flex-wrap gap">
+                    <h3>Assignment 18: CSS Flexbox Layout Playground</h3>
+                    <p>Interactive Flexbox controls for direction, distribution, cross-axis alignment, wrapping, and spacing with live code generation.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-18.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-18"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="css" data-tags="css grid layout fractional repeat fr minmax auto-fit grid-template-areas responsive">
+                    <h3>Assignment 19: CSS Grid Layout Systems</h3>
+                    <p>Two-dimensional layout systems featuring fractional fr tracks, media-query-free auto-fit minmax grids, and named template areas.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-19.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-19"> Done
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-card" data-category="css" data-tags="css transitions keyframes animations hover effects easing curves timing functions cubic-bezier">
+                    <h3>Assignment 20: CSS Transitions &amp; Keyframe Animations</h3>
+                    <p>Smooth hover state transitions, timing easing curve race tracks, and continuous @keyframes animations including beacons and loaders.</p>
+                    <div class="card-action-bar">
+                        <a href="assignments/assignment-20.html">Open Assignment &rarr;</a>
+                        <label class="progress-label">
+                            <input type="checkbox" class="progress-checkbox" data-id="assign-20"> Done
+                        </label>
+                    </div>
                 </div>
             </div>
         </section>
@@ -127,6 +321,12 @@
     <footer>
         <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
     </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

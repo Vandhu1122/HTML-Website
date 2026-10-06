@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 15: Responsive Images &amp; Picture Elements | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of responsive picture elements, media query sources, resolution switching, and lazy loading.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 15: Responsive Images with &lt;picture&gt;</span></nav>
+            <h1 style="margin-top: 1rem;">Assignment 15: Responsive Images with &lt;picture&gt; &amp; srcset</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Delivering optimized images based on viewport width, screen resolution, and art direction requirements.</p>
+
+            <!-- Picture Tag with Media Breakpoints -->
+            <section style="margin-bottom: 2rem;">
+                <h2>1. Art Direction with &lt;picture&gt;</h2>
+                <p style="margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);">The <code>&lt;picture&gt;</code> element allows browsers to choose alternate images depending on screen size. Resize your browser window to observe how the graphic adjusts.</p>
+
+                <picture>
+                    <!-- Mobile viewports (smaller than 600px) -->
+                    <source media="(max-width: 600px)" srcset="../assets/images/logo1.jpg">
+                    <!-- Default desktop fallback -->
+                    <img src="../assets/images/img.webp" alt="Demonstration of responsive layout" style="max-width: 100%; height: auto; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                </picture>
+            </section>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Native Lazy Loading -->
+            <section style="margin-bottom: 2rem;">
+                <h2>2. Native Browser Lazy Loading (loading="lazy")</h2>
+                <p style="margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);">Adding <code>loading="lazy"</code> defers offscreen image network requests until the user scrolls near them, speeding up initial page load times.</p>
+
+                <div class="grid">
+                    <div class="grid-card">
+                        <img src="../assets/images/logo.jpg" alt="Web Course Logo" loading="lazy" style="max-width: 100%; border-radius: var(--border-radius);">
+                        <p style="margin-top: 0.5rem; font-weight: 600;">Deferred Course Graphic</p>
+                    </div>
+                    <div class="grid-card">
+                        <img src="../assets/images/vandana-image.jpg" alt="Student Profile Graphic" loading="lazy" style="max-width: 100%; border-radius: var(--border-radius);">
+                        <p style="margin-top: 0.5rem; font-weight: 600;">Deferred Profile Graphic</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

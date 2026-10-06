@@ -15,7 +15,7 @@ The **Web Development Learning Hub** provides clear, standards-compliant example
 The repository is structured into three main modules:
 1. **Website Showcase:** A complete, multi-page website featuring standard business/educational sections (Home, About, Contact, Media Player, Login, and Registration).
 2. **Topic Guides (`topics/`):** Focused educational references explaining foundational HTML mechanics such as document structure, heading hierarchy, inline vs. block elements, and hyperlinks.
-3. **Coursework Assignments (`assignments/`):** Practical laboratory exercises demonstrating text formatting, lists, tables, background styling, and multimedia players.
+3. **Coursework Assignments (`assignments/`):** 20 hands-on laboratory exercises demonstrating text formatting, quotations and code formatting, semantic layout, containers, lists, background styling, hyperlinks, tables, advanced forms, multimedia, native dialog modals, SVG and Canvas graphics, responsive picture elements, semantic metadata, CSS box model layers, Flexbox playground, CSS Grid layout systems, and CSS transitions & keyframe animations.
 
 ---
 
@@ -23,6 +23,13 @@ The repository is structured into three main modules:
 
 ```
 HTML-Website/
+├── .github/                     # GitHub community standards & CI automation
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md        # Issue template for reporting bugs & display glitches
+│   │   └── new_lesson.md        # Proposal template for new coursework assignments
+│   ├── workflows/
+│   │   └── validate.yml         # GitHub Actions automated HTML validation workflow
+│   └── PULL_REQUEST_TEMPLATE.md # Contributor pull request quality checklist
 ├── index.html                   # Main landing page & hero showcase
 ├── about.html                   # About the platform & curriculum
 ├── contact.html                 # Contact & feedback form
@@ -52,6 +59,7 @@ HTML-Website/
 │
 └── assignments/                 # Hands-on coursework exercises
     ├── assignment-01.html       # Text formatting tags & typography
+    ├── assignment-02.html       # Quotations, citations & code formatting
     ├── assignment-03.html       # Semantic layout & section structure
     ├── assignment-04.html       # Div and span container usage
     ├── assignment-05.html       # Unordered lists and list item bullets
@@ -60,7 +68,16 @@ HTML-Website/
     ├── assignment-08.html       # CSS background image styling
     ├── assignment-09.html       # Hyperlink destinations, targets & bookmarks
     ├── assignment-10.html       # HTML tables, headers, colspan & rowspan
-    └── assignment-12.html       # HTML5 audio and video multimedia embedding
+    ├── assignment-11.html       # Advanced HTML5 form controls & input types
+    ├── assignment-12.html       # HTML5 audio and video multimedia embedding
+    ├── assignment-13.html       # Native modal dialogs & interactive widgets
+    ├── assignment-14.html       # Inline SVG vector graphics & Canvas API
+    ├── assignment-15.html       # Responsive images with <picture> & srcset
+    ├── assignment-16.html       # Semantic metadata, time tags & microdata
+    ├── assignment-17.html       # CSS Box Model layers, sizing & margin collapse
+    ├── assignment-18.html       # CSS Flexbox visual playground & live CSS generator
+    ├── assignment-19.html       # CSS Grid systems, fluid minmax tracks & named areas
+    └── assignment-20.html       # CSS transitions, easing curves & keyframe loops
 ```
 
 ---
@@ -83,6 +100,7 @@ The table below outlines every web page included across the repository, along wi
 | **HTML Elements** | `topics/html-elements.html` | Detailed reference examining block-level vs. inline elements and content groupings. |
 | **Links & Images** | `topics/links-and-images.html` | Reference for absolute vs. relative hyperlinks, anchor bookmarks, and image attributes. |
 | **Assignment 1** | `assignments/assignment-01.html` | Text formatting exercise demonstrating `<strong>`, `<em>`, `<u>`, `<mark>`, `<sub>`, and `<sup>`. |
+| **Assignment 2** | `assignments/assignment-02.html` | Quotations, citations, abbreviations, keyboard input, and computer code formatting tags. |
 | **Assignment 3** | `assignments/assignment-03.html` | Multi-section semantic page layout demonstrating clean content hierarchy. |
 | **Assignment 4** | `assignments/assignment-04.html` | Practical demonstration of container usage with `<div>` and inline text grouping with `<span>`. |
 | **Assignment 5** | `assignments/assignment-05.html` | Unordered list variants illustrating default disc, circle, and square bullet styles. |
@@ -91,7 +109,16 @@ The table below outlines every web page included across the repository, along wi
 | **Assignment 8** | `assignments/assignment-08.html` | Modern presentation of background graphics managed with CSS properties rather than inline attributes. |
 | **Assignment 9** | `assignments/assignment-09.html` | Comprehensive hyperlink guide showing internal anchors, external targets, and mailto/tel protocols. |
 | **Assignment 10** | `assignments/assignment-10.html` | Tabular data presentation featuring `<caption>`, `<thead>`, `<tbody>`, `colspan`, and `rowspan`. |
+| **Assignment 11** | `assignments/assignment-11.html` | Advanced HTML5 form controls including date pickers, range sliders, datalists, progress, and meter gauges. |
 | **Assignment 12** | `assignments/assignment-12.html` | Multimedia integration page featuring embedded HTML5 audio and video playback controls. |
+| **Assignment 13** | `assignments/assignment-13.html` | Native HTML5 `<dialog>` modal dialogs, backdrop styling, and disclosure widgets with `<details>`/`<summary>`. |
+| **Assignment 14** | `assignments/assignment-14.html` | Inline Scalable Vector Graphics (`<svg>`) shapes and interactive 2D graphics drawn with `<canvas>`. |
+| **Assignment 15** | `assignments/assignment-15.html` | Responsive image art direction and resolution switching using `<picture>`, `<source>`, `srcset`, and lazy loading. |
+| **Assignment 16** | `assignments/assignment-16.html` | Machine-readable metadata using `<time>`, `<address>`, microdata attributes, and Open Graph protocol tags. |
+| **Assignment 17** | `assignments/assignment-17.html` | CSS box model layers, interactive content-box vs. border-box sizing calculations, and vertical margin collapse. |
+| **Assignment 18** | `assignments/assignment-18.html` | Interactive CSS Flexbox playground covering direction, alignment, distribution, wrapping, and spacing with live code generation. |
+| **Assignment 19** | `assignments/assignment-19.html` | Two-dimensional CSS Grid layout systems, fraction units (`fr`), responsive auto-fit minmax grids, and named template areas. |
+| **Assignment 20** | `assignments/assignment-20.html` | CSS hover state transitions, timing curves comparison race track, and continuous looping `@keyframes` animations. |
 
 ---
 
@@ -126,9 +153,13 @@ Created and maintained by [Vandana](https://github.com/Vandhu1122).
 
 ---
 
-## Contributing
+## Contributing & Quality Standards
 
 Contributions from learners and developers are warmly welcomed! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide for details on our code style standards, local testing guidelines, and the pull request workflow.
+
+- **Issue Templates:** Standardized templates for reporting [bug reports](.github/ISSUE_TEMPLATE/bug_report.md) and submitting [new lesson proposals](.github/ISSUE_TEMPLATE/new_lesson.md).
+- **Pull Request Checklist:** Every PR includes a verified checklist ([PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md)) covering semantic markup, relative asset paths, accessibility, and responsive styling.
+- **Continuous Integration:** Automated validation via GitHub Actions ([validate.yml](.github/workflows/validate.yml)) ensures that all HTML files meet W3C standards using `html-validate`.
 
 ---
 

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 18: CSS Flexbox Layout Playground | Web Development Learning Hub</title>
+    <meta name="description" content="Interactive CSS Flexbox playground covering flex-direction, justify-content, align-items, flex-wrap, and gap with real-time live preview.">
+    <!-- Open Graph Metadata Tags for Social Sharing -->
+    <meta property="og:title" content="Assignment 18: CSS Flexbox Layout Playground | Web Development Learning Hub">
+    <meta property="og:description" content="Interactive CSS Flexbox playground covering flex-direction, justify-content, align-items, flex-wrap, and gap with real-time live preview.">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .playground-wrapper {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .playground-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            background: var(--surface-bg);
+            padding: 1.25rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .play-btn {
+            background-color: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: monospace;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .play-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .play-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .live-canvas-container {
+            min-height: 280px;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0, 0, 0, 0.02),
+                rgba(0, 0, 0, 0.02) 10px,
+                rgba(0, 0, 0, 0.05) 10px,
+                rgba(0, 0, 0, 0.05) 20px
+            );
+            border: 2px dashed var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            display: flex;
+            transition: all 0.2s ease;
+            overflow: auto;
+        }
+
+        [data-theme="dark"] .live-canvas-container {
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.02),
+                rgba(255, 255, 255, 0.02) 10px,
+                rgba(255, 255, 255, 0.04) 10px,
+                rgba(255, 255, 255, 0.04) 20px
+            );
+        }
+
+        .flex-box-item {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: #ffffff;
+            padding: 1.25rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+            min-width: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+        }
+
+        .flex-box-item:nth-child(2n) {
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+            box-shadow: 0 2px 6px rgba(124, 58, 237, 0.25);
+        }
+
+        .flex-box-item:nth-child(3n) {
+            background: linear-gradient(135deg, #059669, #10b981);
+            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+        }
+
+        .flex-box-item:nth-child(4n) {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+        }
+
+        .code-display {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .guide-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .guide-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .guide-mini-card {
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .guide-mini-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.35rem;
+            font-size: 0.95rem;
+        }
+
+        .guide-mini-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav aria-label="Main Navigation">
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button type="button" id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <a href="../index.html">Home</a> &rsaquo;
+                <a href="../assignments.html">Assignments</a> &rsaquo;
+                <span>Assignment 18: CSS Flexbox Layout Playground</span>
+            </nav>
+            <h1 style="margin-top: 1rem;">Assignment 18: CSS Flexbox Layout Playground</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                Explore CSS Flexible Box Layout (Flexbox) interactively. Test main axis directions, distribution with <code>justify-content</code>, cross-axis alignment with <code>align-items</code>, wrapping, and spacing with <code>gap</code>.
+            </p>
+
+            <!-- Live Interactive Playground -->
+            <section style="margin-bottom: 3rem;">
+                <h2>Interactive Flexbox Playground</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    Click any property value button below to see the live flex container adapt instantly.
+                </p>
+
+                <div class="playground-wrapper">
+                    <div class="playground-controls">
+                        <!-- Direction -->
+                        <div>
+                            <span class="control-group-title">1. flex-direction</span>
+                            <div class="btn-group" data-prop="flex-direction">
+                                <button type="button" class="play-btn active" data-val="row">row</button>
+                                <button type="button" class="play-btn" data-val="column">column</button>
+                                <button type="button" class="play-btn" data-val="row-reverse">row-reverse</button>
+                                <button type="button" class="play-btn" data-val="column-reverse">column-rev</button>
+                            </div>
+                        </div>
+
+                        <!-- Justify Content -->
+                        <div>
+                            <span class="control-group-title">2. justify-content</span>
+                            <div class="btn-group" data-prop="justify-content">
+                                <button type="button" class="play-btn active" data-val="flex-start">flex-start</button>
+                                <button type="button" class="play-btn" data-val="center">center</button>
+                                <button type="button" class="play-btn" data-val="flex-end">flex-end</button>
+                                <button type="button" class="play-btn" data-val="space-between">space-between</button>
+                                <button type="button" class="play-btn" data-val="space-around">space-around</button>
+                                <button type="button" class="play-btn" data-val="space-evenly">space-evenly</button>
+                            </div>
+                        </div>
+
+                        <!-- Align Items -->
+                        <div>
+                            <span class="control-group-title">3. align-items</span>
+                            <div class="btn-group" data-prop="align-items">
+                                <button type="button" class="play-btn" data-val="stretch">stretch</button>
+                                <button type="button" class="play-btn active" data-val="center">center</button>
+                                <button type="button" class="play-btn" data-val="flex-start">flex-start</button>
+                                <button type="button" class="play-btn" data-val="flex-end">flex-end</button>
+                            </div>
+                        </div>
+
+                        <!-- Flex Wrap & Gap -->
+                        <div>
+                            <span class="control-group-title">4. flex-wrap &amp; gap</span>
+                            <div class="btn-group" data-prop="flex-wrap" style="margin-bottom: 0.5rem;">
+                                <button type="button" class="play-btn" data-val="nowrap">nowrap</button>
+                                <button type="button" class="play-btn active" data-val="wrap">wrap</button>
+                            </div>
+                            <div class="btn-group" data-prop="gap">
+                                <button type="button" class="play-btn" data-val="0px">gap: 0</button>
+                                <button type="button" class="play-btn active" data-val="1rem">gap: 1rem</button>
+                                <button type="button" class="play-btn" data-val="1.5rem">gap: 1.5rem</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item count controls -->
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; align-items: center; flex-wrap: wrap;">
+                        <button type="button" id="btn-add-item" class="btn-secondary" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">+ Add Box</button>
+                        <button type="button" id="btn-remove-item" class="btn-secondary" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">&minus; Remove Box</button>
+                        <button type="button" id="btn-reset-flex" class="btn-secondary" style="font-size: 0.85rem; padding: 0.35rem 0.75rem;">Reset Default</button>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;" id="box-count-text">5 items</span>
+                    </div>
+
+                    <!-- Live Canvas -->
+                    <div id="live-flex-container" class="live-canvas-container" style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div class="flex-box-item">Item 1</div>
+                        <div class="flex-box-item" style="height: 90px;">Item 2</div>
+                        <div class="flex-box-item">Item 3</div>
+                        <div class="flex-box-item" style="height: 110px;">Item 4</div>
+                        <div class="flex-box-item">Item 5</div>
+                    </div>
+
+                    <!-- Live Generated Code -->
+                    <pre class="code-display"><code id="generated-css-code">.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}</code></pre>
+                </div>
+            </section>
+
+            <hr style="margin: 2.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Section 1: Direction Explanation -->
+            <section class="guide-section">
+                <h2>1. Flex Direction (The Main Axis)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    <code>flex-direction</code> establishes the main axis along which flex items are placed in the container:
+                </p>
+                <div class="guide-card-grid">
+                    <div class="guide-mini-card">
+                        <h4><code>row</code> (Default)</h4>
+                        <p>Items flow horizontally from left to right (in standard LTR writing modes).</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>column</code></h4>
+                        <p>Items stack vertically from top to bottom, making the vertical axis the main axis.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>row-reverse</code></h4>
+                        <p>Items flow horizontally in reverse order from right to left.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>column-reverse</code></h4>
+                        <p>Items stack vertically from bottom to top in reverse order.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Justify Content Explanation -->
+            <section class="guide-section">
+                <h2>2. Justify Content (Main Axis Distribution)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    <code>justify-content</code> defines how remaining space along the main axis is distributed between and around items:
+                </p>
+                <div class="guide-card-grid">
+                    <div class="guide-mini-card">
+                        <h4><code>flex-start</code></h4>
+                        <p>Items are packed toward the start line of the container.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>center</code></h4>
+                        <p>Items are grouped together at the visual center of the main axis.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>flex-end</code></h4>
+                        <p>Items are packed toward the end line of the container.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>space-between</code></h4>
+                        <p>First and last items touch outer edges; remaining items are spaced evenly between.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>space-around</code></h4>
+                        <p>Items share equal space on both sides (outer gaps are half the inner gaps).</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>space-evenly</code></h4>
+                        <p>Equal spacing is distributed between every item and the boundary walls.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Align Items Explanation -->
+            <section class="guide-section">
+                <h2>3. Align Items (Cross Axis Alignment)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    <code>align-items</code> controls how flex items align along the perpendicular cross axis:
+                </p>
+                <div class="guide-card-grid">
+                    <div class="guide-mini-card">
+                        <h4><code>stretch</code> (Default)</h4>
+                        <p>Items stretch to fill the height (or width in column mode) of the container unless given fixed dimensions.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>center</code></h4>
+                        <p>Items are centered along the cross axis line.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>flex-start</code></h4>
+                        <p>Items align flush to the cross-start boundary.</p>
+                    </div>
+                    <div class="guide-mini-card">
+                        <h4><code>flex-end</code></h4>
+                        <p>Items align flush to the cross-end boundary.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Flex Wrap & Gap -->
+            <section class="guide-section">
+                <h2>4. Flex Wrap &amp; Spacing (<code>gap</code>)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                    By default, flex containers attempt to squeeze all items onto one line (<code>flex-wrap: nowrap</code>). Setting <code>flex-wrap: wrap</code> enables elements to break naturally onto new lines as viewport space constrains them. Modern browsers also support <code>gap</code>, which eliminates the need for negative margin hacks between items.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Flexbox Playground Script -->
+    <script>
+        (function() {
+            const container = document.getElementById('live-flex-container');
+            const codeOutput = document.getElementById('generated-css-code');
+            const btnAddItem = document.getElementById('btn-add-item');
+            const btnRemoveItem = document.getElementById('btn-remove-item');
+            const btnResetFlex = document.getElementById('btn-reset-flex');
+            const boxCountText = document.getElementById('box-count-text');
+
+            const state = {
+                'flex-direction': 'row',
+                'justify-content': 'flex-start',
+                'align-items': 'center',
+                'flex-wrap': 'wrap',
+                'gap': '1rem'
+            };
+
+            function updatePlayground() {
+                container.style.flexDirection = state['flex-direction'];
+                container.style.justifyContent = state['justify-content'];
+                container.style.alignItems = state['align-items'];
+                container.style.flexWrap = state['flex-wrap'];
+                container.style.gap = state['gap'];
+
+                codeOutput.textContent = 
+`.flex-container {
+  display: flex;
+  flex-direction: ${state['flex-direction']};
+  justify-content: ${state['justify-content']};
+  align-items: ${state['align-items']};
+  flex-wrap: ${state['flex-wrap']};
+  gap: ${state['gap']};
+}`;
+                boxCountText.textContent = container.children.length + ' items';
+            }
+
+            document.querySelectorAll('.playground-controls .btn-group').forEach(group => {
+                const prop = group.getAttribute('data-prop');
+                group.querySelectorAll('.play-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        group.querySelectorAll('.play-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        state[prop] = btn.getAttribute('data-val');
+                        updatePlayground();
+                    });
+                });
+            });
+
+            btnAddItem.addEventListener('click', () => {
+                const count = container.children.length + 1;
+                const newItem = document.createElement('div');
+                newItem.className = 'flex-box-item';
+                newItem.textContent = 'Item ' + count;
+                const heights = ['auto', '90px', 'auto', '110px'];
+                newItem.style.height = heights[count % heights.length];
+                container.appendChild(newItem);
+                updatePlayground();
+            });
+
+            btnRemoveItem.addEventListener('click', () => {
+                if (container.children.length > 1) {
+                    container.removeChild(container.lastElementChild);
+                    updatePlayground();
+                }
+            });
+
+            btnResetFlex.addEventListener('click', () => {
+                state['flex-direction'] = 'row';
+                state['justify-content'] = 'flex-start';
+                state['align-items'] = 'center';
+                state['flex-wrap'] = 'wrap';
+                state['gap'] = '1rem';
+
+                document.querySelectorAll('.playground-controls .btn-group').forEach(group => {
+                    const prop = group.getAttribute('data-prop');
+                    group.querySelectorAll('.play-btn').forEach(btn => {
+                        btn.classList.toggle('active', btn.getAttribute('data-val') === state[prop]);
+                    });
+                });
+
+                while (container.children.length > 5) {
+                    container.removeChild(container.lastElementChild);
+                }
+                updatePlayground();
+            });
+
+            updatePlayground();
+        })();
+    </script>
+</body>
+
+</html>

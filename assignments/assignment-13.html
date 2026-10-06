@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 13: Native Modal Dialogs &amp; Interactive Elements | Web Development Learning Hub</title>
+    <meta name="description" content="Demonstration of native HTML5 dialog element, modals, details accordions, and interactive disclosure widgets.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        dialog {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 480px;
+            width: 90%;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: var(--surface-bg);
+            color: var(--text-primary);
+        }
+
+        dialog::backdrop {
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(2px);
+        }
+
+        details {
+            background-color: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        details[open] {
+            border-color: #cbd5e1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        summary {
+            font-weight: 600;
+            color: var(--dark-color);
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+        }
+
+        summary:hover {
+            color: var(--primary-color);
+        }
+
+        details p {
+            margin-top: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="brand">
+                <img src="../assets/images/logo1.jpg" alt="Web Development Learning Hub Logo" width="40" height="40">
+                <span>Web Learning Hub</span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../assignments.html">Assignments</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="card">
+            <nav aria-label="Breadcrumb" class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="../assignments.html">Assignments</a> &rsaquo; <span>Assignment 13: Native Modal Dialogs &amp; Interactive Widgets</span></nav>
+            <h1 style="margin-top: 1rem;">Assignment 13: Native Modal Dialogs &amp; Interactive Widgets</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Explore modern interactive HTML5 tags including native modal dialogs, backdrops, and collapsible disclosure panels.</p>
+
+            <!-- Native Dialog Section -->
+            <section style="margin-bottom: 2rem;">
+                <h2>1. Native HTML5 Modal (&lt;dialog&gt;)</h2>
+                <p style="margin-top: 0.5rem; color: var(--text-muted);">The <code>&lt;dialog&gt;</code> element represents a modal dialog window rendered directly by the browser without external libraries.</p>
+                <button type="button" id="open-dialog-btn" class="btn-primary" style="width: auto; margin-top: 1rem;">Open Native Modal</button>
+
+                <!-- Modal Window -->
+                <dialog id="demo-dialog">
+                    <h2 style="color: var(--dark-color); margin-bottom: 0.5rem;">Native Dialog Window</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">This dialog is rendered using the browser's built-in <code>&lt;dialog&gt;</code> API with native backdrop dimming and keyboard <kbd>Esc</kbd> support.</p>
+                    <button type="button" id="close-dialog-btn" class="btn-primary" style="width: auto;">Close Dialog</button>
+                </dialog>
+            </section>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <!-- Collapsible Disclosure Accordion -->
+            <section style="margin-bottom: 2rem;">
+                <h2>2. Interactive Disclosure Accordion (&lt;details&gt; &amp; &lt;summary&gt;)</h2>
+                <p style="margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);">Collapsible cards displaying expandable FAQs without JavaScript:</p>
+
+                <details>
+                    <summary>What is the difference between inline and block elements?</summary>
+                    <p>Block elements (such as &lt;div&gt;, &lt;p&gt;, and &lt;h1&gt;) start on a new line and stretch across the full available width. Inline elements (such as &lt;span&gt;, &lt;strong&gt;, and &lt;a&gt;) only take up as much width as their content.</p>
+                </details>
+
+                <details>
+                    <summary>Why are semantic landmarks important for accessibility?</summary>
+                    <p>Landmark tags like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, and &lt;footer&gt; provide clear page navigation points for screen readers, allowing users with visual impairments to jump directly to key content sections.</p>
+                </details>
+
+                <details>
+                    <summary>How does the native &lt;dialog&gt; element handle keyboard navigation?</summary>
+                    <p>When opened with <code>showModal()</code>, the browser traps keyboard focus within the dialog, disables interaction with the background content, and automatically dismisses the dialog when the <kbd>Esc</kbd> key is pressed.</p>
+                </details>
+            </section>
+        </div>
+    </main>
+
+    <!-- Dialog Script -->
+    <script>
+        const dialog = document.getElementById('demo-dialog');
+        const openBtn = document.getElementById('open-dialog-btn');
+        const closeBtn = document.getElementById('close-dialog-btn');
+
+        openBtn.addEventListener('click', () => dialog.showModal());
+        closeBtn.addEventListener('click', () => dialog.close());
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
